@@ -1,18 +1,22 @@
+.PHONY: install
+install: ## Install gem dependencies
+	bundle install
+
 .PHONY: serve
 serve: ## Run jekyll serve
-	@docker-compose up
+	bundle exec jekyll serve --watch
+
+.PHONY: build
+build: ## Build the site
+	bundle exec jekyll build
+
+.PHONY: clean
+clean: ## Clean generated files
+	bundle exec jekyll clean
 
 .PHONY: open
 open: ## Open web browser with URL from jekyll serve
 	@open http://localhost:4000
-
-CMD?="jekyll help"
-
-.PHONY: run
-run: ## Run command (set with CMD, defaults to jekyll help)
-	@docker-compose run --rm \
-		jekyll \
-		$(CMD)
 
 .PHONY: help
 .DEFAULT_GOAL := help

@@ -3,3 +3,6 @@ vendor
 .sass-cache
 .jekyll-cache
 tmp/
+.gems/
+.direnv/
+result

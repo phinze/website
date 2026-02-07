@@ -8,22 +8,38 @@ This is a personal website built with Jekyll 4.2.2 and hosted on GitHub Pages. T
 
 ## Development Workflow
 
-All development is done via Docker to avoid polluting the host machine. The site uses Docker Compose with named volumes for improved performance on macOS.
+Development uses a Nix flake devShell (via direnv) to provide Ruby 3.3 and native dependencies. Bundler manages gem installation into a local `.gems/` directory.
+
+### Prerequisites
+
+- [Nix](https://nixos.org/) with flakes enabled
+- [direnv](https://direnv.net/) (recommended, for automatic shell activation)
+
+### Getting Started
+
+1. `direnv allow` (or `nix develop` if not using direnv)
+2. `make install` to install gem dependencies
+3. `make serve` to start the development server at http://localhost:4000
 
 ### Common Commands
 
+- **Install dependencies**: `make install`
 - **Start development server**: `make serve` (starts Jekyll server on http://localhost:4000)
+- **Build the site**: `make build`
+- **Clean generated files**: `make clean`
 - **Open browser**: `make open` (opens http://localhost:4000)
-- **Run arbitrary Jekyll command**: `make run CMD="jekyll <command>"`
 - **View all make targets**: `make help`
 
-### Docker Architecture
+### Nix Architecture
 
-The `docker-compose.yml` uses:
-- Jekyll 4.2.2 Docker image
-- Named volumes for `jekyll_gems` and `jekyll_site` (not synced to host for performance)
-- Only the project root is mounted to `/srv/jekyll`
-- Port 4000 is mapped directly (not randomized)
+The `flake.nix` provides a devShell with:
+- Ruby 3.3 and Bundler
+- Native libraries: libxml2, libxslt, libyaml, zlib, openssl
+- macOS frameworks provided automatically by the Darwin stdenv SDK
+- `GEM_HOME` set to `.gems/` (project-local, gitignored)
+- `NOKOGIRI_USE_SYSTEM_LIBRARIES=1` for native nokogiri builds
+
+The `.envrc` file activates the devShell automatically via direnv.
 
 **Important**: When making changes to `_config.yml`, you must restart the Jekyll server (CTRL-C and re-run `make serve`) as Jekyll does not watch config file changes.
 

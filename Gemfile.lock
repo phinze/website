@@ -142,6 +142,7 @@ GEM
     webrick (1.9.1)
 
 PLATFORMS
+  arm64-darwin
   ruby
 
 DEPENDENCIES
