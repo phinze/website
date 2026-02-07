@@ -4,7 +4,7 @@ This file provides guidance to AI coding assistants when working with code in th
 
 ## Project Overview
 
-This is a personal website built with Jekyll 4.2.2 and hosted on GitHub Pages. The site features blog posts, talks, and projects with a custom theme based on Tufte CSS typography principles.
+This is a personal website built with Jekyll 4.2.2 and hosted on GitHub Pages. The site features blog posts, talks, and projects with a custom brutalist theme.
 
 ## Development Workflow
 
@@ -61,7 +61,7 @@ The site uses three Jekyll collections defined in `_config.yml`:
 
 ### Custom Plugins
 
-Two custom Liquid tags are available (based on tufte-jekyll):
+Two custom Liquid tags are available:
 
 - `{% marginnote 'id' 'content' %}`: Creates a clickable margin note with toggle
 - `{% sidenote 'id' 'content' %}`: Creates a numbered sidenote with toggle
@@ -70,10 +70,10 @@ Both are implemented as Ruby plugins in `_plugins/` directory.
 
 ### Theme and Typography
 
-The site uses a custom theme inspired by Edward Tufte's typographic principles (tufte.css). The theme emphasizes:
-- Clean, readable typography
+The site uses a custom brutalist theme (`brutalist.css` + `site.css`) with:
+- Public Sans for body text, Hack for monospace
+- Clean, minimal design with purple accent color
 - Margin notes and sidenotes for supplementary content
-- Minimal, distraction-free design
 
 ### Page Structure
 
