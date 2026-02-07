@@ -49,11 +49,9 @@ It's a "let it rip" vision. Crank the polygon count to maximum. The GPU can hand
 
 On the other end of the spectrum, the Oxide folks had [a conversation recently about engineering rigor in the LLM age](https://oxide-and-friends.transistor.fm/episodes/engineering-rigor-in-the-llm-age) that lands in a very different place.
 
-Bryan Cantrill describes using Claude Code on a kernel scalability task — breaking up locks in Helios. Two hours with the LLM versus an estimated four solo. But he didn't just let it rip. He reviewed the code carefully, found subtle issues, and noticed that the model had made a connection he hadn't anticipated — something in the generated code he might have missed on his own.
+One example: Rain Paharia wrote one implementation by hand, then had the LLM replicate the pattern across four variants — 20,000 lines plus 5,000 doc tests in under a day. Without the LLM this library might never have shipped at all — the tedium-to-value ratio was just too punishing. The LLM didn't replace the rigor. It made the rigorous version _feasible_.
 
-Rain Paharia talks about writing one implementation by hand, then having the LLM replicate the pattern across four variants — 20,000 lines plus 5,000 doc tests in under a day. Work that would have taken weeks. The thing is, without the LLM this library might never have shipped at all — the tedium-to-value ratio was just too punishing. The LLM didn't replace the rigor. It made the rigorous version _feasible_.
-
-The way the Oxide folks see it, LLMs remove friction from the _details_, which frees you up to spend more time on the parts that actually require judgment. More rigor, not less. The polygon budget went up, and they're spending it on quality rather than quantity.
+The pattern across the whole conversation is the same: LLMs remove friction from the _details_, which frees you up to spend more time on the parts that actually require careful judgment. More rigor, not less. The polygon budget went up, and they're spending it on quality rather than quantity.
 
 ## Carving Back
 
@@ -78,7 +76,7 @@ I think that's where we're headed with code. The bottleneck was writing it. Now 
 
 Every time you draw a box on a whiteboard and label it "database," that's LoD. Every time a senior engineer waves their hand and says "that part's fine, the bug is over _here_" — they're culling. Every time you squint at a system diagram and decide which arrow to follow — you're choosing a resolution.
 
-The tools around this activity are changing fast. I can load a low-LoD model of a module I haven't touched in months by asking an LLM to summarize it. I can vaguely describe a building and get back a ream of floor plans. These are real, meaningful changes to the speed of the work. But the work itself — the deciding, the choosing, the constant question of "how much do I need to know right now?" — that part hasn't changed at all. I don't think it can. Somebody still has to decide what gets built and navigate the things that have been built. That's not the bottleneck. That's the work.
+The tools around this activity are changing fast. I can load a low-LoD model of a subsystem I've never even seen by asking an LLM to summarize it. I can vaguely describe a building and get back a ream of floor plans. These are real, meaningful changes to the speed of the work. But the work itself — the deciding, the choosing, the constant question of "how much do I need to know right now?" — that part hasn't changed at all. I don't think it can. Somebody still has to decide what gets built and navigate the things that have been built. That's not the bottleneck. That's the work.
 
 A distant mountain doesn't need every triangle. But the thing in the player's hands — right in front of the camera, the thing they're interacting with every frame — that needs all the polygons you can give it. No amount of GPU power changes that. The player is always looking at _something_.
 
