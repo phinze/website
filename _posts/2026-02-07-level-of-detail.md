@@ -74,14 +74,14 @@ The raw power didn't eliminate the LoD problem. It moved it. The engineers aren'
 
 I think that's where we're headed with code. The bottleneck was writing it. Now the bottleneck is knowing what should exist and what shouldn't. The skill of knowing when you have too much — too much code, too much abstraction, too much detail — becomes the whole game.
 
-## Adjusting the Dial
+## The Constant
 
-What's actually changing, I think, is the _speed_ at which we navigate levels of detail. The fundamental activity is the same: zoom in, zoom out, decide what resolution you need, swap in the right model.
+We've been doing level of detail since before we had computers. Every time you draw a box on a whiteboard and label it "database," that's LoD. Every time a senior engineer waves their hand and says "that part's fine, the bug is over _here_" — they're culling. Every time you squint at a system diagram and decide which arrow to follow — you're choosing a resolution.
 
-But the tools are getting faster. I can ask an LLM to give me the gist of a module I haven't looked at in months — low-LoD model, loaded in seconds. I can ask it to trace a specific code path in detail, or generate an implementation from a design sketch — zooming in to full resolution on demand.
+The tools around this activity are changing fast. I can load a low-LoD model of a module I haven't touched in months by asking an LLM to summarize it. I can zoom in to full resolution by asking it to trace a code path. These are real, meaningful changes to the speed of the work. But the work itself — the deciding, the choosing, the constant question of "how much do I need to know right now?" — that part hasn't changed at all. I don't think it can. It's not a tool problem. It's a cognition problem.
 
-The question that keeps nagging at me is whether there are limits to how fast you can do this. Not technical limits — cognitive ones. When Adam says you stop reading the code and just review architecture, that's a LoD choice: you're permanently zoomed out. The Oxide folks are saying no, you zoom in where it matters, you just get there faster.
+Adam says you stop reading the code and just review architecture. That's a LoD choice — permanently zoomed out. The Oxide folks say you zoom in where it matters, you just get there faster. I think they're both describing the same underlying activity. They just disagree about where to set the dial.
 
-I think the LoD metaphor points the way: it depends on what you're looking at. A distant mountain doesn't need every triangle. But the gun in the player's hand — the thing right in front of the camera, the thing they're interacting with every frame — that needs all the polygons you can give it.
+A distant mountain doesn't need every triangle. But the thing in the player's hands — right in front of the camera, the thing they're interacting with every frame — that needs all the polygons you can give it. No amount of GPU power changes that. The player is always looking at _something_.
 
-Knowing which is which. That's the gig.
+Knowing what that something is, that's the gig. It always has been.
