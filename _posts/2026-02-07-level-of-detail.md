@@ -59,7 +59,7 @@ I'm somewhere in between these two, but probably closer to Oxide's end.
 
 Adam's right that the velocity increase is real and not going away. But I think the "50,000 lines a day" framing mistakes output for progress. We've always known that lines of code is a terrible metric. The interesting question isn't how much code you can generate — it's how much code you can _justify_.
 
-My hunch is that we'll spend just as much time and energy carving code back as we will generating it. If generating code is nearly free, then the cost shifts entirely to understanding, maintaining, and pruning it. The LoD dial doesn't just go in one direction. Sometimes the right move is to _reduce_ the polygon count — to simplify, to delete, to replace a sprawling implementation with something you can actually reason about.
+My hunch is that we'll spend just as much time and energy carving code back as we will generating it. If generating code is nearly free, then the cost shifts entirely to understanding, maintaining, and pruning it. And sometimes the right move isn't a better level of detail — it's fewer polygons in the scene altogether. Delete the sprawling implementation and replace it with something you can actually reason about.
 
 <figure>
   <img src="/assets/images/frustum-culling.gif" alt="Frustum culling in action — as the camera sweeps around a 3D city, everything outside its field of view vanishes">
@@ -76,7 +76,7 @@ I think that's where we're headed with code. The bottleneck was writing it. Now 
 
 Every time you draw a box on a whiteboard and label it "database," that's LoD. Every time a senior engineer waves their hand and says "that part's fine, the bug is over _here_" — they're culling. Every time you squint at a system diagram and decide which arrow to follow — you're choosing a resolution.
 
-The tools around this activity are changing fast. I can load a low-LoD model of a subsystem I've never even seen by asking an LLM to summarize it. I can vaguely describe a building and get back a ream of floor plans. These are real, meaningful changes to the speed of the work. But the work itself — the deciding, the choosing, the constant question of "how much do I need to know right now?" — that part hasn't changed at all. I don't think it can. Somebody still has to decide what gets built and navigate the things that have been built. That's not the bottleneck. That's the work.
+The tools around this activity are changing fast. I can load a low-LoD model of a subsystem I've never even seen by asking an LLM to summarize it. I can vaguely describe a building and get back a ream of floor plans. These are real, meaningful changes to the speed of the work. But the work itself — the deciding, the choosing, the constant question of "how much do I need to know right now?" — that part hasn't changed at all. I don't think it can. Somebody still has to decide what the thing should _do_, and somebody has to navigate what's been built. That's not the bottleneck. That's the work.
 
 A distant mountain doesn't need every triangle. But the thing in the player's hands — right in front of the camera, the thing they're interacting with every frame — that needs all the polygons you can give it. No amount of GPU power changes that. The player is always looking at _something_.
 
