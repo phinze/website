@@ -5,7 +5,9 @@ date:  2026-02-07
 listed: false
 ---
 
-In 3D graphics, there's a technique called Level of Detail. The idea is simple: why spend GPU cycles rendering every vertex of a distant mountain when the player can't tell the difference between ten thousand triangles and a hundred? So the engine swaps in a lower-polygon model. As you get closer, it swaps in a higher one. The player never notices.
+> **Draft** — This is an early version I'm sharing for feedback. Please don't link or share widely yet. Thoughts welcome!
+
+In 3D graphics, there's a technique called Level of Detail. The idea is simple: why spend GPU cycles rendering every vertex of a distant mountain when the player can't tell the difference between ten thousand triangles and a hundred? So the engine swaps in a lower-polygon model. As you get closer, it swaps in a higher one. Done well, the player never notices.
 
 ![The Stanford bunny rendered at three levels of detail — from thousands of polygons down to a few hundred](/assets/images/stanford-bunny-lod.png)
 
@@ -13,7 +15,7 @@ The algorithms have gotten wildly sophisticated over the decades. Modern engines
 
 I keep coming back to this idea because I think it describes one of the central activities of building software. Not the code part — the _thinking_ part.
 
-### Models All the Way Down
+## Models All the Way Down
 
 We spend our days building and navigating models. Code is the most visible kind, but the mental models are what actually matter. When I'm debugging a production issue, I'm not holding the entire system in my head. I'm holding a low-polygon version — just enough shape to know where to look, with the ability to zoom in when something catches my eye.
 
@@ -23,7 +25,7 @@ Even the phrase "black box" is a kind of low-polygon model — a cube with no vi
 
 This is something experienced engineers do instinctively. They're constantly adjusting their level of detail. Zoom out to understand the architecture. Zoom in to trace a bug through a function. Zoom back out to check whether the fix makes sense in context. The skill isn't knowing everything about the system — it's knowing what resolution you need right now.
 
-### Context Windows
+## Context Windows
 
 Here's what's been rattling around my head: LLMs have a version of this problem, and it's _weirdly_ parallel to our own.
 
@@ -33,7 +35,7 @@ Getting an LLM to do good work is largely a LoD problem. You need to load the ri
 
 We do the same thing with our own brains all day long. We just never think of it that way.
 
-### Fifty Thousand Lines a Day
+## Fifty Thousand Lines a Day
 
 So here comes AI and it blows up the polygon budget.
 
@@ -43,7 +45,7 @@ His framework for what's left for humans is design and planning. Implementation,
 
 It's a "let it rip" vision. Crank the polygon count to maximum. The GPU can handle it now, so why hold back?
 
-### The Rigor Move
+## The Rigor Move
 
 On the other end of the spectrum, the Oxide folks had [a conversation recently about engineering rigor in the LLM age](https://oxide-and-friends.transistor.fm/episodes/engineering-rigor-in-the-llm-age) that lands in a very different place.
 
@@ -53,7 +55,7 @@ Rain Paharia talks about writing one implementation by hand, then having the LLM
 
 The way the Oxide folks see it, LLMs remove friction from the _details_, which frees you up to spend more time on the parts that actually require judgment. More rigor, not less. The polygon budget went up, and they're spending it on quality rather than quantity.
 
-### Carving Back
+## Carving Back
 
 I'm somewhere in between these two, but probably closer to Oxide's end.
 
@@ -61,8 +63,10 @@ Adam's right that the velocity increase is real and not going away. But I think 
 
 My hunch is that we'll spend just as much time and energy carving code back as we will generating it. If generating code is nearly free, then the cost shifts entirely to understanding, maintaining, and pruning it. The LoD dial doesn't just go in one direction. Sometimes the right move is to _reduce_ the polygon count — to simplify, to delete, to replace a sprawling implementation with something you can actually reason about.
 
-![Frustum culling in action — as the camera sweeps around a 3D city, everything outside its field of view vanishes](/assets/images/frustum-culling.gif)<br>
-<small>*[Falmouth Games Academy](https://github.com/Falmouth-Games-Academy/comp350-research-journal/wiki/View-Frustum-Culling-(VFC))*</small>
+<figure>
+  <img src="/assets/images/frustum-culling.gif" alt="Frustum culling in action — as the camera sweeps around a 3D city, everything outside its field of view vanishes">
+  <figcaption><a href="https://github.com/Falmouth-Games-Academy/comp350-research-journal/wiki/View-Frustum-Culling-(VFC)">Falmouth Games Academy</a></figcaption>
+</figure>
 
 And here's where the graphics analogy comes back around. GPUs are absurdly more powerful than they were twenty years ago. We've gotten to photorealistic interactive worlds of massive scale running at hundreds of frames per second. But if you look at what graphics engineers actually spend their time on, it's _still_ context management. Stream in the right portion of the map so the player doesn't hit a loading screen. Drop everything outside the viewport as they look around. Cull what's behind that wall. Even with all that horsepower, real-time photorealism is still a bunch of dances with data — deciding what to load, what to keep, and what to throw away, hundreds of times per second.
 
@@ -70,7 +74,7 @@ The raw power didn't eliminate the LoD problem. It moved it. The engineers aren'
 
 I think that's where we're headed with code. The bottleneck was writing it. Now the bottleneck is knowing what should exist and what shouldn't. The skill of knowing when you have too much — too much code, too much abstraction, too much detail — becomes the whole game.
 
-### Adjusting the Dial
+## Adjusting the Dial
 
 What's actually changing, I think, is the _speed_ at which we navigate levels of detail. The fundamental activity is the same: zoom in, zoom out, decide what resolution you need, swap in the right model.
 

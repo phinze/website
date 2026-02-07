@@ -249,6 +249,14 @@ img {
   height: auto;
 }
 
+figure {
+  margin: 1.5rem 0;
+}
+
+figure img {
+  width: 100%;
+}
+
 /* Fix emoji sizing */
 img.emoji {
   width: 20px;
