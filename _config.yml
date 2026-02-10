@@ -2,6 +2,9 @@ title: "phinze.com"
 url: https://phinze.com
 logo: /assets/images/logo.png
 
+include:
+  - .well-known
+
 markdown: kramdown
 
 plugins:
