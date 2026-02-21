@@ -35,7 +35,7 @@ We do the same thing with our own brains all day long. We just never think of it
 
 ## Fifty Thousand Lines a Day
 
-So here comes AI and it blows up the polygon budget.
+So here comes AI, and the geometry starts generating itself.
 
 Adam Jacob gave [a talk at CfgMgmtCamp](https://youtu.be/yxzghm3Fdj8?t=10718) this week where he laid it all out pretty bluntly. He's fresh off shutting down System Initiative (six years, seven product iterations, didn't find fit), and he's rebuilt a prototype in three days with AI. He says people he knows and trusts are generating 50,000 lines of working code per day, single-threaded. His message to the infrastructure community: the time for skepticism is over. The velocity increase is too high. Adapt or get left behind.
 
@@ -55,14 +55,14 @@ The pattern across the whole conversation is the same: LLMs remove friction from
 
 Adam's right that the velocity increase is real and not going away. But I think the "50,000 lines a day" framing mistakes output for progress. We've always known that lines of code is a terrible metric. The interesting question isn't how much code you can generate. It's how much code you can _justify_.
 
-My hunch is that we'll spend just as much time and energy carving code back as we will generating it. If generating code is nearly free, then the cost shifts entirely to understanding, maintaining, and pruning it. And sometimes the right move isn't a better level of detail. It's fewer polygons in the scene altogether. Delete the sprawling implementation and replace it with something you can actually reason about.
+My hunch is that we'll spend just as much time and energy carving code back as we will generating it. If generating code is nearly free, the scene fills up with geometry fast. But your rendering budget---working memory, attention, the ability to reason about what you've built---doesn't scale the same way. And sometimes the right move isn't a more sophisticated LoD strategy. It's simplifying the scene itself. Delete the sprawling implementation and replace it with something you can actually reason about.
 
 <figure>
   <img src="/assets/images/frustum-culling.gif" alt="Frustum culling in action — as the camera sweeps around a 3D city, everything outside its field of view vanishes">
   <figcaption>via <a href="https://github.com/Falmouth-Games-Academy/comp350-research-journal/wiki/View-Frustum-Culling-(VFC)">Falmouth Games Academy</a></figcaption>
 </figure>
 
-And here's where the graphics analogy comes back around. GPUs are absurdly more powerful than they were twenty years ago. And the results are real: photorealistic worlds spanning kilometers, running at hundreds of frames per second. But you don't get there by throwing the whole map at the hardware. That gets you a very pretty slideshow. You get there because graphics engineers got better at managing what to render and what to skip. Stream in the right portion of the map so the player doesn't hit a loading screen. Drop everything outside the viewport as they look around. Cull what's behind that wall. Photorealism is a bunch of dances with data: deciding what to load, what to keep, and what to throw away, hundreds of times per second.
+The GPU story played out the same way. GPUs are absurdly more powerful than they were twenty years ago. And the results are real: photorealistic worlds spanning kilometers, running at hundreds of frames per second. But you don't get there by throwing the whole map at the hardware. That gets you a very pretty slideshow. You get there because graphics engineers got better at managing what to render and what to skip. Stream in the right portion of the map so the player doesn't hit a loading screen. Drop everything outside the viewport as they look around. Cull what's behind that wall. Photorealism is a bunch of dances with data: deciding what to load, what to keep, and what to throw away, hundreds of times per second.
 
 The raw power didn't eliminate the LoD problem. It moved it. The engineers aren't hand-placing low-poly stand-ins anymore, but they're still spending their days figuring out what the player needs to see and what they can get away with not rendering. The work changed shape, but the discipline is what delivers the fidelity.
 
