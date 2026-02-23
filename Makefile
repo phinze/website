@@ -4,7 +4,7 @@ install: ## Install gem dependencies
 
 .PHONY: serve
 serve: ## Run jekyll serve
-	bundle exec jekyll serve --watch --drafts --host 0.0.0.0
+	bundle exec jekyll serve --watch --drafts --host 0.0.0.0 --livereload
 
 .PHONY: build
 build: ## Build the site
