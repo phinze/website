@@ -6,6 +6,8 @@
 }
 
 :root {
+  color-scheme: light dark;
+
   --color-text: #222;
   --color-background: #fff;
   --color-purple: #5b21b6;
@@ -16,6 +18,17 @@
   --font-sans: 'Public Sans', system-ui, -apple-system, sans-serif;
   --font-mono: 'Hack', 'Courier New', monospace;
   --max-width: 65ch;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: #ddd;
+    --color-background: #1a1a1a;
+    --color-purple: #8b5cf6;
+    --color-border: #555;
+    --color-border-light: #333;
+    --color-muted: #999;
+  }
 }
 
 body {
