@@ -1,124 +1,63 @@
 ---
-title: "Migrating My Homelab from Nomad to Miren"
-slug:  nomad-to-miren
+title: "It's Nice to Have a Personal Server"
+slug:  personal-server
 date:  2026-02-15
 listed: true
 ---
 
-For the last few years, my personal infrastructure has run on a pretty standard HashiCorp stack: a single Nomad node (`hashi01`) running a handful of services behind Traefik, all wired together with Terraform and Tailscale. It's been fine. It works. But "fine" is a funny word when you're building something that's supposed to be better.
+<!--
+DRAFT NOTES (2026-03-01)
 
-I work on [Miren](https://miren.dev), so it was past time to eat my own cooking. This weekend I migrated everything off Nomad and onto a fresh Miren server. Here's how it went.
+Part of a loose "My Setup" series. This is the personal server / self-hosted
+services post. Should reference "The Box in the Basement" post for hardware/
+network context once that's published.
 
-### The Setup
+Status: significantly reworked from original "Migrating My Homelab from Nomad
+to Miren" draft. The detailed migration content (Nitter WORKDIR debugging,
+Terraform snippets, code blocks for each service) was cut. That material
+could live as a dedicated Miren blog cross-post if wanted.
 
-My homelab is modest. A Proxmox box running VMs, Tailscale connecting everything, DNSimple for DNS. The services are the kind of stuff you'd expect from someone who wants to self-host their way out of the ad-supported internet: [Miniflux](https://miniflux.app/) for RSS, [Redlib](https://github.com/redlib-org/redlib) as a Reddit frontend, [Nitter](https://github.com/zedeus/nitter) for Twitter, plus a few others.
+Open threads:
+- Intro still has some overlap with box-in-the-basement (Tailscale, hardware,
+  Craigslist story repeated). Once that post exists, this one can trim the
+  "Why it's easy to not think about" section and just link over.
+- Secret Miren promotion motive: show don't tell. The Miren stuff should land
+  as "and here's how easy the server part can be" not as a pitch.
+- De-LLM-ify pass still needed — did one round but could use another.
+- "Consuming the internet on your own terms" is the thesis — make sure it
+  stays front and center and doesn't get buried by setup details.
+- Glance (dashboard) and Booklore (book library) are mentioned but not linked.
+  Could add links or cut the specifics.
+-->
 
-On Nomad, each service was a `.nomad` job file with HCL templates, Nomad variables for secrets, and Traefik tags for routing. It worked, but there was a lot of ceremony. Want to add a service? Write 80 lines of HCL, configure Traefik labels, set up Nomad variables, hope the template rendering does what you think it does.
+I've been running a personal server for about four years now. A Proxmox box in my basement, a few VMs, Tailscale stitching it all together. It started as a tinkering project, but at this point I'd really miss it if it went away.
 
-### Provisioning
+Mostly what it gives me is a way to consume the internet on my own terms.
 
-I already had a Terraform module for spinning up Proxmox VMs with cloud-init and Tailscale baked in, so standing up `miren01` was just adding another module call:
+### What's running
 
-```hcl
-module "miren01" {
-  source      = "./modules/proxmox-vm"
-  name        = "miren01"
-  template    = "ubuntu-2404"
-  clone_vm_id = 9000
-  vm_id       = 108
-  cores       = 4
-  memory      = 8 * 1024
-  disk_size   = "100G"
-}
-```
+[Miniflux](https://miniflux.app/) has been my RSS reader since late 2023. I follow maybe a hundred feeds — blogs, newsletters, a handful of news sources — and there's no algorithm sorting them for me. I open it in the morning, read what's there, and close it. Turns out that's all I ever wanted from a news reader.
 
-`terraform apply`, SSH in, install Miren, done. The DNS wildcard (`*.inze.ph`) was already managed by Terraform, so cutting it over to the new VM later would be a one-line change.
+[Redlib](https://github.com/redlib-org/redlib) has been my Reddit frontend since 2022. Same content, but no ads, no tracking, no "because you visited r/whatever" recommendations. Just the subreddits I chose, in chronological order. I've been running it long enough that I've had to patch it myself a couple times when Reddit's API changes broke things.
 
-One thing I did need to set up manually: the ACME DNS challenge for TLS certificates. My server is only reachable over Tailscale, so HTTP challenges won't work. Miren uses [lego](https://go-acme.github.io/lego/) under the hood, so I pointed it at DNSimple and it Just Worked.
+There are others — [Nitter](https://github.com/zedeus/nitter) for Twitter, a dashboard, a book library — but the specific services matter less than what they have in common. The default internet is a feed that someone else curates to maximize the time you spend looking at it. These are all tools that get out of the way and let me decide what's worth my attention.
 
-### The Tracer Bullet
+### Why it's easy to not think about
 
-I always start with [whoami](https://github.com/traefik/whoami). It's the tracer bullet for "can I deploy a thing and reach it over HTTPS?"
+**Tailscale** is a big part of it. Every VM I boot starts on my tailnet, behind NAT, unreachable from the public internet. I don't have to think about firewalls or auth or whether someone's scanning my ports. If you're on my tailnet, you can reach the server. If you're not, it doesn't exist as far as the internet is concerned.
 
-The entire app definition:
+The other half is just **having a box in the basement**. Four years ago I found a Craigslist post for a decommissioned workstation: Xeon Platinum 8275, 24 cores, 192GB of RAM. Talked the seller down to $1,800 and met him in a police station parking lot to exchange cash for server hardware. Added a 2TB NVMe drive, installed Proxmox, and eventually moved it into a rackmount case. That's the whole fleet.
 
-```toml
-# .miren/app.toml
-name = "whoami"
+There are no monthly bills — no instance types to agonize over, no egress charges. (There's a power bill, which I'll admit I haven't tracked carefully — but between rooftop solar and a community solar subscription, the electricity is at least coming from green sources.) The machine is comically overpowered for what I'm doing, since it runs my main dev VM *and* the personal server with resources to spare, but that's sort of the point. You buy the hardware once and then you just stop worrying about it.
 
-[services.web]
-port = 80
+It means I always have a place to deploy things. Want to try a new self-hosted app? Spin it up, point a DNS record at it. Want to prototype something weird for a weekend? Same thing. It's like having a workbench in your garage — you don't think about whether you have one, it's just there when you need it.
 
-[services.web.concurrency]
-mode = "fixed"
-num_instances = 1
-```
+### The server part used to be the hard part
 
-```dockerfile
-# Dockerfile.miren
-FROM traefik/whoami
-EXPOSE 80
-```
+For the last few years, the services themselves ran on a pretty standard HashiCorp stack: a single Nomad node (`hashi01`) with Traefik in front, all managed with Terraform. It worked, but there was a lot of ceremony. Want to add a service? Write 80 lines of HCL, configure Traefik labels, set up Nomad variables, hope the template rendering does what you think it does.
 
-`miren deploy`, set a route, `curl` it. Working. That felt good. Two files instead of an 80-line Nomad job.
+I work on [Miren](https://miren.dev), so it was past time to eat my own cooking. This past weekend I spun up a fresh VM, installed Miren, and migrated everything off Nomad in an afternoon. The services each went from a 60-80 line Nomad job down to a short TOML file and a Dockerfile, and sidecars like Postgres just become another service in the same app definition instead of a whole separate job with its own lifecycle.
 
-### The Easy Ones
+What I didn't expect was how useful the migration would be for the product itself. Deploying real workloads — services I actually depend on every day — surfaced a bunch of issues I never would have hit running demos or synthetic tests. I filed a handful of bugs and feature requests over the course of the afternoon, and a few of them have already made it into the product.
 
-Redlib was next. Stateless, single container, one env var. Took about two minutes. Miniflux was slightly more interesting because it needs Postgres. In Miren, you just add another service to the same app:
-
-```toml
-[services.postgres]
-image = "postgres:15"
-
-[[services.postgres.env]]
-key = "POSTGRES_DB"
-value = "miniflux"
-```
-
-Postgres gets internal DNS at `postgres.app.miren` and persistent storage automatically. No separate job, no Consul service discovery, no volume stanza. The DATABASE_URL just points at the sidecar and it works.
-
-### The Hard One
-
-Then came Nitter. This is where I actually learned something.
-
-Nitter is quirky software. It reads config from a file (`nitter.conf`) in the current working directory. It reads OAuth sessions from `sessions.jsonl`, also relative to the CWD. On Nomad, I handled this with template blocks that rendered Nomad variables into files before the process started. Clean enough.
-
-On Miren, I tried to do the equivalent: set secrets as env vars, write an entrypoint script to bridge them into files at runtime. The config file part worked. The sessions file... didn't. I'd write it, verify the contents looked correct, and nitter would report reading an empty file. Maddening.
-
-After a bunch of debugging, I discovered the root cause was simpler than I expected: **Miren wasn't respecting the Dockerfile `WORKDIR` directive**. Nitter uses relative paths for everything (`./nitter.conf`, `./sessions.jsonl`), so when the process started in a different directory than I specified, it couldn't find its files. Once I added an explicit `cd /src` in the entrypoint, everything clicked.
-
-### The Bugs You Want to Find
-
-This is exactly the kind of thing dogfooding is for. I filed two issues:
-
-1. **WORKDIR should be respected.** If the Dockerfile says `WORKDIR /src`, the process should start there. Standard Docker behavior.
-
-2. **Secret files, not just env vars.** Lots of software reads config from files. Having a first-class way to mount an env var value as a file (like Nomad templates or Kubernetes secret mounts) would eliminate the whole entrypoint-script-as-glue pattern.
-
-I also filed a couple of issues earlier in the process about error messages that could be clearer. The kind of papercuts you only find when you're actually using the thing under real conditions, not just running the happy path in a demo.
-
-### The Cutover
-
-With all three priority services running and verified on `miren01`, the DNS cutover was anticlimactic. One Terraform change to point the wildcard at the new IP:
-
-```hcl
-resource "dnsimple_zone_record" "services_wildcard" {
-  zone_name = var.domain
-  name      = "*"
-  value     = local.miren01_ip  # was hashi01_ip
-  type      = "A"
-  ttl       = 3600
-}
-```
-
-`terraform apply`, wait for TTLs, done. Everything live on the new stack.
-
-### Impressions
-
-The thing that stands out is how much less _stuff_ there is. A Nomad job for a simple web service is 60-80 lines of HCL with groups, tasks, templates, service blocks, tags, and check stanzas. The Miren equivalent is a 10-line TOML file and a 2-line Dockerfile. There's less to get wrong.
-
-The sidecar model is particularly nice. On Nomad, Postgres and Redis were separate jobs with their own lifecycle, their own service registrations, their own health checks. On Miren, they're just services in the same app with automatic internal DNS. It matches how I actually think about these things: miniflux _has_ a database, it's not a peer of its database.
-
-There's still rough edges. The WORKDIR thing. The secret files gap. Some error messages that could be more helpful. But that's the whole point of doing this---you don't find the real issues until you put real workloads on it.
-
-`hashi01` is still running. I'll decommission it once I've migrated the remaining services. But for the stuff I actually use every day---my RSS reader, my Reddit and Twitter frontends---it's all on Miren now. And it took an afternoon.
+My RSS reader, my Reddit and Twitter frontends — it's all running on Miren now. And the server is still just there when I need it.
