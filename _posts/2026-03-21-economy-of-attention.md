@@ -31,11 +31,10 @@ And here's why this matters now: the _whole point_ of building software is to cr
 
 The best software has a spectacular ratio. Years of focused human comprehension on the building side, millions of hours of saved effort on the usage side. That's the whole game. That's why we do this.
 
-## Through the Lens
+## Look at All This Discourse
 
-Once you see software as an attention economy with a conservation law, a lot of the current discourse snaps into focus. I've been reading a stack of recent posts that are all circling the same set of concerns from different angles, and I think they're all describing the same underlying phenomenon.
+Once you see software as an attention economy with a conservation law, a lot of the current discourse snaps into focus. I've been reading a stack of recent posts that are all circling the same set of concerns from different angles, and I think they're all describing the same underlying phenomenon: the attention has to be spent, and every apparent escape hatch just moves it somewhere else.
 
-### The Maintainer's Burden
 
 A Django maintainer recently wrote ["Give Django your time and money, not your tokens"](https://www.better-simple.com/django/2026/03/16/give-django-your-time-and-money/), a post that nails the problem from the receiving end. Open source maintainers are getting flooded with AI-generated contributions that cost the submitter almost nothing to produce and cost the reviewer _everything_ to evaluate.
 
@@ -45,45 +44,48 @@ Now you can generate a plausible-looking patch in thirty seconds. The code might
 
 The conservation law is doing its thing. The attention cost of a correct patch didn't go down; it got transferred from the submitter to the reviewer. In Marxist terms, this is a classic move: the labor didn't disappear, it was displaced onto someone with less power in the transaction. The maintainer now does the comprehension-work the submitter skipped. (It's telling that people are already building [explicit trust systems](https://github.com/mitchellh/vouch) to replace the implicit filter that effort used to provide.)
 
-### The Review Bottleneck
 
-There's a common observation making the rounds lately ([one recent version](https://apenwarr.ca/log/20260316) is sharp on the diagnosis, though its conclusions are questionable): every layer of review approval makes a process roughly 10x slower. AI makes generation faster, but generation was never the bottleneck. Review is the bottleneck. And review is slow because it's _attention-intensive_: someone has to actually understand what changed and why.
+There's a common observation making the rounds lately ([one recent version](https://apenwarr.ca/log/20260316) is sharp on the diagnosis, though its conclusions are questionable): every layer of review you add to a process costs dramatically more than the last. AI makes generation faster, but generation was never the bottleneck. Review is the bottleneck. And review is slow because it's _attention-intensive_: someone has to actually understand what changed and why.
+
+The booster-class response is obvious: just have the AI do the review too. Close the loop. AI generates, AI reviews, AI ships, value appears, no human attention required. You can practically hear the CEOs salivating: capital that generates value without labor, the one thing Marx said it couldn't do. "Take _that_, old man." But this is just adding another layer to the same broken system. The mistake has already been made; review is always too late to address root causes. And if nobody in the loop understands the code, the attention debt doesn't vanish. It compounds silently until a support ticket is filed that the AI cannot resolve, because the fix requires understanding why the system was built the way it was, and nobody knows anymore. A human has to pay the attention debt all at once, with no context, under pressure.
 
 Deming saw this decades ago in manufacturing. Adding QA inspection layers _reduces_ individual accountability. When everyone knows there's another check downstream, they stop checking their own work. The layers don't compound quality; they dilute responsibility. Nobody feels like quality is their job.
 
 Through the lens: review layers are attention-routing systems, and badly designed ones leak. When you add a QA layer, you're not adding attention to the system. You're spreading the same attention thinner across more people, each of whom feels less ownership. The total attention spent might even go _down_. Marx saw the same thing in the factory: subdividing labor increases throughput but alienates the worker from the product. Quality suffers because nobody holds the whole thing in their head anymore.
 
-### The Spec Shell Game
 
-Gabriella Gonzalez (creator of [Dhall](https://dhall-lang.org/)) wrote ["A sufficiently detailed spec is code"](https://haskellforall.com/2026/03/a-sufficiently-detailed-spec-is-code), a clean, almost mathematical observation. If you write a specification precise enough for an AI to generate correct code from it, you've already done the hard work. You've spent the attention. The spec didn't save you anything; it just moved where the attention went.
+There's a whole genre of post right now about spec-driven development: [write the spec, let the AI build it](https://haskellforall.com/2026/03/a-sufficiently-detailed-spec-is-code). Make the code [disposable and regenerable](https://aicoding.leaflet.pub/3majnyfydzs2y), keep only the intent. It's appealing. But as Gabriella Gonzalez (creator of [Dhall](https://dhall-lang.org/)) observes: a sufficiently detailed spec _is_ code. If you write a specification precise enough for an AI to generate correct code from it, you've already done the hard work. You've spent the attention. The spec didn't save you anything; it just moved where the attention went.
 
-This is attention laundering. You can shuffle the apparent cost around: write a spec instead of code, generate a PR instead of typing it, use a framework that hides the complexity. But the actual attention required to produce something _correct and understood_ doesn't compress.
+This is attention laundering. You can shuffle the apparent cost around: write a spec instead of code, generate a PR instead of typing it, use a framework that hides the complexity. And yes, you can have the AI write the spec too. Turtles all the way down. But the actual attention required to produce something _correct and understood_ doesn't compress. At some point someone has to actually understand the problem being solved.
 
-### The Slot Machine
 
-A [designer-developer wrote](https://notes.visaint.space/ai-coding-is-gambling/) about AI coding feeling like gambling. You pull the lever, you get a result, you pull again. It's "preposterously addicting" precisely because it removes the cognitive burden. But the work feels hollow. You're spending your time "mopping up how poorly things have been connected" rather than actually solving problems.
+Then there's the emotional layer. Developers are [comparing AI coding to gambling](https://notes.visaint.space/ai-coding-is-gambling/): pull the lever, get a result, pull again. It's "preposterously addicting" precisely because it removes the cognitive burden. Simon Willison coined "[deep blue](https://simonwillison.net/2026/Feb/15/deep-blue/)" for the existential dread underneath: _what was I even for?_ But the work also feels hollow. You're spending your time "mopping up how poorly things have been connected" rather than actually solving problems.
 
 This is what attention debt feels like from the inside. And Marx has a word for it: _alienation_. The worker separated from the product of their labor. When you vibe-code, you produce artifacts you don't understand. The hollow feeling is the experience of being alienated from your own output. The slot machine gives you the dopamine of production without the satisfaction of comprehension.
 
 This is why "vibe coding" works for prototypes and breaks for production systems. A prototype has low attention stakes: nobody else depends on it, nobody has to review it, nobody has to maintain it. The economy balances even with minimal attention spent. But a production system that other people rely on is a _shared_ attention budget, and withdrawals without deposits are felt by everyone downstream.
 
+The pattern repeats at every level. Submit it and the reviewer pays. Add review layers and they leak. Write specs instead and it's the same work in different clothes. Skip it entirely and it feels hollow. The attention has to be spent.
+
 ## The Spice Shaker
 
-There's a pitch being made right now, by the frontier model companies, by the LinkedIn-consultant-CEO-AI-booster class, by a thousand breathless threads. It goes something like this: the LLMs have ingested a hyperdimensional superset of all the attention ever paid into their massive training corpora. All that accumulated human comprehension, distilled into an API. Shake the shaker, get the flavor. Pay by the token for the privilege.
+And of course, there's a pitch being made that solves all of these problems at once. The frontier model companies, the LinkedIn-consultant-CEO-AI-booster class, a thousand breathless threads, all selling the same dream: the LLMs have ingested a hyperdimensional superset of all the attention ever paid into their massive training corpora. All that accumulated human comprehension, distilled into an API. Shake the shaker, get the flavor. Pay by the token for the privilege.
 
 And in a way, from a certain angle, they kinda do? LLMs really have encoded patterns from an unfathomable volume of human thought. The model really can produce things that look like the output of comprehension. The spice shaker genuinely tastes like something.
 
-But what comes out is the _surface form_ of attention, not attention itself. A statistical echo of comprehension. It can reproduce the _shape_ of understanding without anyone in the loop actually understanding anything. The flavor without the nutrition.
+But what comes out is _diffuse_ attention, not _directed_ attention. The model has seen a million solutions to problems that look vaguely like yours. It hasn't verified that any of them actually work in your specific context. A good software product says "we understood this problem and here's the solution." The spice shaker says "this looks like what solutions to problems like yours usually look like." The flavor without the nutrition.
 
-Marx would call this commodity fetishism: mistaking the product for the labor that produced it. The pitch collapses the distinction between "pattern-matched against a corpus of human comprehension" and "comprehended." Those are not the same thing. One is a product. The other is a process. The product can be bought and sold. The process has to be lived through.
+This is why LLMs work beautifully as _amplifiers_ for directed human attention and badly as _replacements_ for it. When a knowledgeable human aims the model at a problem they understand, the diffuse patterns get focused by the human's comprehension. That's genuinely powerful. But when nobody in the loop understands the problem, you get plausible output aimed at nothing. (Sure, the AI-heads will say: fine, we'll train more directed models, let a thousand flowers bloom. Maybe! But each of those flowers will need its own directed attention to cultivate. The conservation law doesn't care how many models you train.)
 
-The logical extreme of this pitch is the [SaaSpocalypse](https://deathbyclawd.com/), the market-level panic that every SaaS product is just one `.md` file away from being replaced by a Claude skill. Nearly a trillion dollars in software market cap wiped out on the premise that all the accumulated attention baked into these products can be reproduced by shaking the shaker hard enough.
+Marx would call the broader pitch commodity fetishism: mistaking the product for the labor that produced it. The pitch collapses the distinction between "pattern-matched against a corpus of human comprehension" and "comprehended." Those are not the same thing. One is a product. The other is a process. The product can be bought and sold. The process has to be lived through.
 
-There's a site called [Death by Clawd](https://deathbyclawd.com/) that's savage, funny, and — intentionally or not — a perfect satire of the hysteria. You feed it a company URL and it generates a fake death certificate, a Bloomberg-terminal-style crash graphic, and a replacement SKILL.md file that purports to do everything your product does in 31 lines of markdown. Replacement cost: ~$0.003 per run. Cause of death: "Claude learned to write Terraform faster than your dashboard could load."
+The logical extreme of this pitch is the "SaaSpocalypse," the market-level panic that every SaaS product is just one `.md` file away from being replaced by a Claude skill. Nearly a trillion dollars in software market cap wiped out on the premise that all the accumulated attention baked into these products can be reproduced by shaking the shaker hard enough.
 
-I ran it on [Miren](https://deathbyclawd.com?url=miren.dev), the infrastructure platform I work on. It gave us a 38/100 survival score, a eulogy that begins "Dearly beloved, we gather here to remember Miren — a platform that dared to ask, 'What if Heroku, but again, but this time we call it modern?'" and a 31-line SKILL.md that generates Dockerfiles and Terraform configs. Estimated time until death: 2-3 years.
+There's a site called [Death by Clawd](https://deathbyclawd.com/) that's savage, funny, and — intentionally or not — a perfect satire of the hysteria. You feed it a company URL and it generates a fake death certificate, a replacement SKILL.md file, and a eulogy. Replacement cost: ~$0.003 per run. Cause of death: "Claude learned to do it better than your silly little web app."
 
-It's hilarious. It's also commodity fetishism in action. The 31-line file reproduces the shape of what Miren does: it can generate the same kinds of config files. What it can't reproduce is two years of accumulated attention from people who understand the actual problem. Why that networking edge case breaks three different cloud providers in three different ways. How you make rollbacks safe. What to do when nothing in the logs explains what just happened. The SKILL.md gives you the shape. The product is the understanding.
+I ran it on [Miren](https://deathbyclawd.com?url=miren.dev), the infrastructure platform I work on. It gave us a 38/100 survival score, a eulogy that begins "Dearly beloved, we gather here to remember Miren — a platform that dared to ask, 'What if Heroku, but again, but this time we call it modern?'" and a 31-line SKILL.md that generates Dockerfiles and Terraform configs.
+
+It's hilarious. It's also commodity fetishism in action. What the 31-line file can't reproduce is two years of accumulated attention from people who care about making deployment feel like a non-event. The design choices that make CI auth work without storing secrets. The UX decisions about what a developer should be thinking about (their app) versus what they shouldn't (load balancer configs). That's craft: human experience and taste, exported so others can benefit. The SKILL.md can generate configs. It can't generate taste. It took years of experience and years of attention to know what to build. (Or I'm wrong and we're killed in a year by a chatbot. Only time will tell!)
 
 The taxonomy of survivors and casualties is telling, too. The companies that score well are the ones where the accumulated attention is _deeply embedded_: physical infrastructure, regulatory knowledge, things you can't pattern-match your way through. The ones sweating are workflow abstractions where the attention was always thinner, always closer to the shape that an LLM can reproduce.
 
@@ -91,7 +93,7 @@ But here's the thing — and I think the Marxist in me has to say it — some of
 
 If LLMs democratize knowledge and capability, if they make it so a solo developer or a tiny team can do things that used to require an enterprise sales call, I'm all for it. That's [the world I'm helping build toward at work](https://miren.dev) anyway. Shake that shaker. Disrupt away.
 
-## The Multiplier
+## Amplifier or Replacement
 
 But you can use the product to _accelerate_ the process without substituting one for the other. And this is where the frame gets practical. If AI helps you _skip_ attention, if nobody actually understands the thing that shipped, the product degrades. Buggy, confusing, unreliable software doesn't save user attention. It _costs_ user attention. The multiplier inverts. You've produced something that consumes more attention than it saves, and at that point it's not really technology in any meaningful sense. It's just generated stuff that someone downstream has to deal with.
 
@@ -99,7 +101,7 @@ But if AI helps you spend attention more _effectively_, automating the mechanica
 
 The distinction isn't whether AI was involved. It's whether the humans in the loop spent enough attention to ensure the output is understood, not just functional. The socially necessary attention, in Marx's framing, for the thing to have real use-value.
 
-## The Heuristic
+## Did You Spend the Attention?
 
 If the frame is useful, it should produce a simple rule of thumb. Here's mine: **did you spend at least as much attention as you're asking someone else to spend?**
 

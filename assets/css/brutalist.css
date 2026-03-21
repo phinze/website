@@ -34,7 +34,7 @@
 body {
   font-family: var(--font-sans);
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.65;
   color: var(--color-text);
   background: var(--color-background);
   padding: 2rem 1rem;
@@ -56,7 +56,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-  margin: 0 0 1rem 0;
+  margin: 0 0 1.25rem 0;
 }
 
 /* === LINKS === */
@@ -215,11 +215,22 @@ hr {
 }
 
 /* === ARTICLE === */
+article h1 {
+  font-size: 1.35rem;
+}
+
 article h2 {
   border: none;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   margin-bottom: 0.5rem;
   padding: 0;
+  font-size: 1.15rem;
+}
+
+article h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
 }
 
 article ol, article ul {
