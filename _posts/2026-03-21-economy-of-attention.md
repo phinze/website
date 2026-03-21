@@ -11,7 +11,7 @@ There's a lot of foam on the water right now. AI is remaking how software gets b
 
 All of which leaves a body looking for anchor points. Navigation buoys on the salty seas. Fundamentals that were always there and hold true even when everything on the surface is churning.
 
-Here's one that's helped me: **the economy of attention**.
+I've been calling mine **the economy of attention**.
 
 Not "the attention economy" — that's the demand-side concept, who can capture your eyeballs. This is the supply side. Attention as a scarce resource that has to be _spent_ to produce anything of value. Think of it as a conservation law: the attention required to produce correct, understood software can't be created or destroyed, only moved around. If less is spent in one place, more has to be spent somewhere else.
 
@@ -19,7 +19,7 @@ AI has made generating code almost free. It has not made _understanding_ code an
 
 ## Dead Attention
 
-Here's an old idea in new clothes: a software system is accumulated attention, crystallized into something useful.
+An old idea in new clothes: a software system is accumulated attention, crystallized into something useful.
 
 Not lines of code. Not person-hours. Not story points. _Attention_. Someone had to understand a problem deeply enough to encode a solution, and then someone else had to understand that solution deeply enough to trust it, and then someone else had to understand the system deeply enough to change it without breaking what came before. Every layer of that understanding is attention, spent and compounded.
 
@@ -27,7 +27,7 @@ Marx would recognize this immediately. His [labor theory of value](https://en.wi
 
 There's even a hilariously literal version of this in software economics. The [COCOMO model](https://en.wikipedia.org/wiki/COCOMO) estimates a codebase's "value" by computing the person-hours it would take to reproduce, then multiplying by a blended labor rate. It's crude. It's also accidentally Marxist. It was groping toward this truth: the value is the embedded attention. The hours were always just a proxy.
 
-And here's why this matters now: the _whole point_ of building software is to create an attention surplus for the people who use it. We spend attention building the thing so that users don't have to spend attention doing the thing the hard way. Technology is an attention transformer. Attention in on the building side, attention savings out on the usage side. The measure of a useful piece of software is that multiplier: how much attention was spent building it versus how much attention it saves across everyone who uses it.
+Why does this matter now? Because the _whole point_ of building software is to create an attention surplus for the people who use it. We spend attention building the thing so that users don't have to spend attention doing the thing the hard way. Technology is an attention transformer. Attention in on the building side, attention savings out on the usage side. The measure of a useful piece of software is that multiplier: how much attention was spent building it versus how much attention it saves across everyone who uses it.
 
 The best software has a spectacular ratio. Years of focused human comprehension on the building side, millions of hours of saved effort on the usage side. That's the whole game. That's why we do this.
 
@@ -57,13 +57,13 @@ Review layers are attention-routing systems, and badly designed ones leak. When 
 
 There's a whole genre of post right now about spec-driven development: [write the spec, let the AI build it](https://haskellforall.com/2026/03/a-sufficiently-detailed-spec-is-code). Make the code [disposable and regenerable](https://aicoding.leaflet.pub/3majnyfydzs2y), keep only the intent. It's appealing. But as Gabriella Gonzalez (creator of [Dhall](https://dhall-lang.org/)) observes: a sufficiently detailed spec _is_ code. If you write a specification precise enough for an AI to generate correct code from it, you've already done the hard work. You've spent the attention. The spec didn't save you anything; it just moved where the attention went.
 
-This is attention laundering. You can shuffle the apparent cost around: write a spec instead of code, generate a PR instead of typing it, use a framework that hides the complexity. And yes, you can have the AI write the spec too. Turtles all the way down. But the actual attention required to produce something _correct and understood_ doesn't compress. At some point someone has to actually understand the problem being solved.
+You can shuffle the apparent cost around: write a spec instead of code, generate a PR instead of typing it, use a framework that hides the complexity. And yes, you can have the AI write the spec too. Turtles all the way down. But the actual attention required to produce something _correct and understood_ doesn't compress. At some point someone has to actually understand the problem being solved.
 
 Then there's the emotional layer. Developers are [comparing AI coding to gambling](https://notes.visaint.space/ai-coding-is-gambling/): pull the lever, get a result, pull again. It's "preposterously addicting" precisely because it removes the cognitive burden. Simon Willison coined "[deep blue](https://simonwillison.net/2026/Feb/15/deep-blue/)" for the existential dread underneath: _what was I even for?_ But the work also feels hollow. You're spending your time "mopping up how poorly things have been connected" rather than actually solving problems.
 
-This is what attention debt feels like from the inside. And Marx has a word for it: _[alienation](https://en.wikipedia.org/wiki/Marx%27s_theory_of_alienation)_. The worker separated from the product of their labor. When you vibe-code, you produce artifacts you don't understand. The hollow feeling is the experience of being alienated from your own output. The slot machine gives you the dopamine of production without the satisfaction of comprehension.
+That hollow feeling is attention debt, experienced from the inside. Marx has a word for it: _[alienation](https://en.wikipedia.org/wiki/Marx%27s_theory_of_alienation)_. The worker separated from the product of their labor. When you vibe-code, you produce artifacts you don't understand. The hollow feeling is the experience of being alienated from your own output. The slot machine gives you the dopamine of production without the satisfaction of comprehension.
 
-This is why "vibe coding" works for prototypes and breaks for production systems. A prototype has low attention stakes: nobody else depends on it, nobody has to review it, nobody has to maintain it. The economy balances even with minimal attention spent. But a production system that other people rely on is a _shared_ attention budget, and withdrawals without deposits are felt by everyone downstream.
+"Vibe coding" works for prototypes and breaks for production systems. A prototype has low attention stakes: nobody else depends on it, nobody has to review it, nobody has to maintain it. The economy balances even with minimal attention spent. But a production system that other people rely on is a _shared_ attention budget, and withdrawals without deposits are felt by everyone downstream.
 
 The pattern repeats at every level. Submit it and the reviewer pays. Add review layers and they leak. Write specs instead and it's the same work in different clothes. Skip it entirely and it feels hollow. The attention has to be spent.
 
@@ -75,7 +75,7 @@ And in a way, from a certain angle, they kinda do? LLMs really have encoded patt
 
 But what comes out is _diffuse_ attention, not _directed_ attention. The model has seen a million solutions to problems that look vaguely like yours. It hasn't verified that any of them actually work in your specific context. A good software product says "we understood this problem and here's the solution." The spice shaker says "this looks like what solutions to problems like yours usually look like." The flavor without the nutrition.
 
-This is why LLMs work beautifully as _amplifiers_ for directed human attention and badly as _replacements_ for it. When a knowledgeable human aims the model at a problem they understand, the diffuse patterns get focused by the human's comprehension. That's powerful. But when nobody in the loop understands the problem, you get plausible output aimed at nothing. (Sure, the AI-heads will say: fine, we'll train more directed models, let a thousand flowers bloom. Maybe! But each of those flowers will need its own directed attention to cultivate. The conservation law doesn't care how many models you train.)
+LLMs work beautifully as _amplifiers_ for directed human attention and badly as _replacements_ for it. When a knowledgeable human aims the model at a problem they understand, the diffuse patterns get focused by the human's comprehension. That's powerful. But when nobody in the loop understands the problem, you get plausible output aimed at nothing. (Sure, the AI-heads will say: fine, we'll train more directed models, let a thousand flowers bloom. Maybe! But each of those flowers will need its own directed attention to cultivate. The conservation law doesn't care how many models you train.)
 
 Marx would call the broader pitch [commodity fetishism](https://en.wikipedia.org/wiki/Commodity_fetishism): mistaking the product for the labor that produced it. The pitch collapses the distinction between "pattern-matched against a corpus of human comprehension" and "comprehended." Those are not the same thing. One is a product. The other is a process. The product can be bought and sold. The process has to be lived through.
 
@@ -89,7 +89,7 @@ It's hilarious. It's also commodity fetishism in action. What the 31-line file c
 
 The taxonomy of survivors and casualties is telling, too. The companies that score well are the ones where the accumulated attention is _deeply embedded_: physical infrastructure, regulatory knowledge, things you can't pattern-match your way through. The ones sweating are workflow abstractions where the attention was always thinner, always closer to the shape that an LLM can reproduce.
 
-But here's the thing — and I think the Marxist in me has to say it — some of that sweating is _deserved_. If your business model was milking a fat margin off a sliver of information asymmetry, if the "value" you provided was mostly gatekeeping knowledge that's now freely accessible, then the conservation law is telling you something you maybe didn't want to hear: you never had that much accumulated attention in the first place. Your moat was opacity, not depth. The spice shaker _can_ reproduce thin attention. That's not a bug in the model. That's the forces of production disrupting the relations of production. That's how it's supposed to work.
+And look — the Marxist in me has to say it — some of that sweating is _deserved_. If your business model was milking a fat margin off a sliver of information asymmetry, if the "value" you provided was mostly gatekeeping knowledge that's now freely accessible, then the conservation law is telling you something you maybe didn't want to hear: you never had that much accumulated attention in the first place. Your moat was opacity, not depth. The spice shaker _can_ reproduce thin attention. That's not a bug in the model. That's the forces of production disrupting the relations of production. That's how it's supposed to work.
 
 If LLMs democratize knowledge and capability, if they make it so a solo developer or a tiny team can do things that used to require an enterprise sales call, I'm all for it. That's [the world I'm helping build toward at work](https://miren.dev) anyway. Shake that shaker. Disrupt away.
 
@@ -103,7 +103,7 @@ The distinction isn't whether AI was involved. It's whether the humans in the lo
 
 ## Did You Spend the Attention?
 
-If the frame is useful, it should produce a simple rule of thumb. Here's mine: **did you spend at least as much attention as you're asking someone else to spend?**
+If the frame is useful, it should produce a simple rule of thumb: **did you spend at least as much attention as you're asking someone else to spend?**
 
 This works across the whole spectrum of trust contexts. On a high-trust team where you've built up a long history of deposits into the shared attention budget, the dials can be set differently. Your teammates know you. They've seen your judgment. When you say "Claude and I looked into this and here's what we found," that's a meaningful signal because they trust that _you_ actually spent the attention, regardless of who typed the characters. The AI is a tool in the hands of someone they trust.
 
