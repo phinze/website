@@ -5,7 +5,7 @@ date:  2026-03-21
 listed: false
 ---
 
-*This is an early draft I'm sharing for feedback. Please don't share widely, and hit me with your thoughts! [Last updated](https://github.com/phinze/phinze.github.io/commits/main/_posts/2026-03-21-economy-of-attention.md): 2026-03-21 ~3pm CT.*
+*This is an early draft I'm sharing for feedback. Please don't share widely, and hit me with your thoughts! [Last updated](https://github.com/phinze/phinze.github.io/commits/main/_posts/2026-03-21-economy-of-attention.md): 2026-03-21 ~3:15pm CT.*
 
 There's a lot of foam on the water right now. AI is remaking how software gets built, and our whole industry is metabolizing the change in public. Maintainers are overwhelmed! Systems thinkers are drawing new diagrams! Individual developers are writing about how their own workflows feel different in ways they can't quite name! Is it a tailspin? An ouroboros of navel-gazing, the discourse eating its own tail? Or are we in a chrysalis, goo right now but about to emerge reformed and beautiful? So many takes! So many emotions! And rightly so. There's a lot to figure out.
 
@@ -109,7 +109,7 @@ This works across the whole spectrum of trust contexts. On a high-trust team whe
 
 First-time open source contributions are on the opposite end of the trust spectrum. You have no history. No deposits. The only signal the maintainer has is the contribution itself and the interaction around it. An AI-generated PR with a generated description is asking someone to spend scarce attention evaluating work that _appears_ to have cost you nothing. Even if you actually spent thirty minutes in a careful back-and-forth with an AI, the artifact doesn't show that. The economy doesn't balance from the reviewer's perspective.
 
-This isn't about whether AI touched the code. It's about whether a human spent sufficient attention. And "sufficient" is relative to how much attention you're asking from others.
+This isn't about whether AI touched the code. I find the whole "which lines did the LLM write" discourse tiresome and counterproductive. If you want to opt out of these tools entirely, I respect that, genuinely. But for the rest of us who are experimenting — and that's what you do with new tools! — a culture that polices toolchains instead of outcomes creates fear around exactly the kind of experimentation we need right now. The question that matters is whether a human spent sufficient attention. And "sufficient" is relative to how much attention you're asking from others.
 
 ## Who Owns the Means of Attention
 
