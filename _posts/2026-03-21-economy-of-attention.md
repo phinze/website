@@ -5,7 +5,7 @@ date:  2026-03-21
 listed: false
 ---
 
-*This is an early draft I'm sharing for feedback. Please don't share widely, and hit me with your thoughts! [Last updated](https://github.com/phinze/phinze.github.io/commits/main/_posts/2026-03-21-economy-of-attention.md): 2026-03-21 ~3:15pm CT.*
+*This is an early draft I'm sharing for feedback. Please don't share widely, and hit me with your thoughts! [Last updated](https://github.com/phinze/phinze.github.io/commits/main/_posts/2026-03-21-economy-of-attention.md): 2026-03-21 ~3:45pm CT.*
 
 There's a lot of foam on the water right now. AI is remaking how software gets built, and our whole industry is metabolizing the change in public. Maintainers are overwhelmed! Systems thinkers are drawing new diagrams! Individual developers are writing about how their own workflows feel different in ways they can't quite name! Is it a tailspin? An ouroboros of navel-gazing, the discourse eating its own tail? Or are we in a chrysalis, goo right now but about to emerge reformed and beautiful? So many takes! So many emotions! And rightly so. There's a lot to figure out.
 
@@ -41,7 +41,7 @@ The old implicit contract was roughly balanced. Writing a patch took effort. Sub
 
 Now you can generate a plausible-looking patch in thirty seconds. The code might be correct. It might even be good. But **the reviewer has no way to know that without spending their own attention**, and their attention hasn't gotten any cheaper.
 
-The conservation law is doing its thing. The attention cost of a correct patch didn't go down; it got transferred from the submitter to the reviewer. In Marxist terms, this is a classic move: the labor didn't disappear, it was displaced onto someone with less power in the transaction. The maintainer now does the comprehension-work the submitter skipped. (It's telling that people are already building [explicit trust systems](https://github.com/mitchellh/vouch) to replace the implicit filter that effort used to provide.)
+The conservation law is doing its thing. The attention cost of a correct patch didn't go down; the submitter's cost dropped to near-zero while the reviewer's stayed exactly the same. The asymmetry exploded. In Marxist terms, this is a familiar dynamic: the labor didn't disappear, it just stopped being shared. The maintainer now does the comprehension-work alone. (It's telling that people are already building [explicit trust systems](https://github.com/mitchellh/vouch) to replace the implicit filter that effort used to provide.)
 
 There's a common observation making the rounds lately ([one recent version](https://apenwarr.ca/log/20260316) is sharp on the diagnosis, though its conclusions are questionable): every layer of review you add to a process costs dramatically more than the last. AI makes generation faster, but generation was never the bottleneck. Review is the bottleneck. And review is slow because it's _attention-intensive_: someone has to actually understand what changed and why.
 
@@ -89,7 +89,7 @@ It's hilarious. It's also commodity fetishism in action. What the 31-line file c
 
 The taxonomy of survivors and casualties is telling, too. The companies that score well are the ones where the accumulated attention is _deeply embedded_: physical infrastructure, regulatory knowledge, things you can't pattern-match your way through. The ones sweating are workflow abstractions where the attention was always thinner, always closer to the shape that an LLM can reproduce.
 
-And look — the Marxist in me has to say it — some of that sweating is _deserved_. If your business model was milking a fat margin off a sliver of information asymmetry, if the "value" you provided was mostly gatekeeping knowledge that's now freely accessible, then the conservation law is telling you something you maybe didn't want to hear: you never had that much accumulated attention in the first place. Your moat was opacity, not depth. The spice shaker _can_ reproduce thin attention. That's not a bug in the model. That's the forces of production disrupting the relations of production. That's how it's supposed to work.
+And look — the Marxist in me has to say it — some of that sweating is _deserved_. Not all information asymmetry is the same. If your hard-won knowledge never made it into the training corpus — because it's proprietary, because it's too arcane, because it lives in the heads of people who learned it the hard way — the spice shaker can't reproduce it. But if your business model was milking a fat margin off the _shallow_ kind — well, information wants to be free, and it just got a lot freer. If the "value" you provided was mostly gatekeeping knowledge that's now freely accessible, then the conservation law is telling you something you maybe didn't want to hear: you never had that much accumulated attention in the first place. Your moat was opacity, not depth. The spice shaker _can_ reproduce thin attention. That's not a bug in the model. That's the forces of production disrupting the relations of production. That's how it's supposed to work.
 
 If LLMs democratize knowledge and capability, if they make it so a solo developer or a tiny team can do things that used to require an enterprise sales call, I'm all for it. That's [the world I'm helping build toward at work](https://miren.dev) anyway. Shake that shaker. Disrupt away.
 
