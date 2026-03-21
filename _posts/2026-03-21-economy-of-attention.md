@@ -5,7 +5,7 @@ date:  2026-03-21
 listed: false
 ---
 
-*This is an early draft I'm sharing for feedback. Please don't share widely, and hit me with your thoughts! Last updated: 2026-03-21 ~2:30pm CT.*
+*This is an early draft I'm sharing for feedback. Please don't share widely, and hit me with your thoughts! [Last updated](https://github.com/phinze/phinze.github.io/commits/main/_posts/2026-03-21-economy-of-attention.md): 2026-03-21 ~3pm CT.*
 
 There's a lot of foam on the water right now. AI is remaking how software gets built, and our whole industry is metabolizing the change in public. Maintainers are overwhelmed! Systems thinkers are drawing new diagrams! Individual developers are writing about how their own workflows feel different in ways they can't quite name! Is it a tailspin? An ouroboros of navel-gazing, the discourse eating its own tail? Or are we in a chrysalis, goo right now but about to emerge reformed and beautiful? So many takes! So many emotions! And rightly so. There's a lot to figure out.
 
@@ -33,8 +33,7 @@ The best software has a spectacular ratio. Years of focused human comprehension 
 
 ## Look at All This Discourse
 
-Once you see software as an attention economy with a conservation law, a lot of the current discourse snaps into focus. I've been reading a stack of recent posts that are all circling the same set of concerns from different angles, and I think they're all describing the same underlying phenomenon: the attention has to be spent, and every apparent escape hatch just moves it somewhere else.
-
+Once you see software as an attention economy with a conservation law, a lot of the current discourse snaps into focus. I've been reading a stack of recent posts, all circling the same thing from different angles: the attention has to be spent, and every apparent escape hatch just moves it somewhere else.
 
 A Django maintainer recently wrote ["Give Django your time and money, not your tokens"](https://www.better-simple.com/django/2026/03/16/give-django-your-time-and-money/), a post that nails the problem from the receiving end. Open source maintainers are getting flooded with AI-generated contributions that cost the submitter almost nothing to produce and cost the reviewer _everything_ to evaluate.
 
@@ -44,20 +43,21 @@ Now you can generate a plausible-looking patch in thirty seconds. The code might
 
 The conservation law is doing its thing. The attention cost of a correct patch didn't go down; it got transferred from the submitter to the reviewer. In Marxist terms, this is a classic move: the labor didn't disappear, it was displaced onto someone with less power in the transaction. The maintainer now does the comprehension-work the submitter skipped. (It's telling that people are already building [explicit trust systems](https://github.com/mitchellh/vouch) to replace the implicit filter that effort used to provide.)
 
-
 There's a common observation making the rounds lately ([one recent version](https://apenwarr.ca/log/20260316) is sharp on the diagnosis, though its conclusions are questionable): every layer of review you add to a process costs dramatically more than the last. AI makes generation faster, but generation was never the bottleneck. Review is the bottleneck. And review is slow because it's _attention-intensive_: someone has to actually understand what changed and why.
 
-The booster-class response is obvious: just have the AI do the review too. Close the loop. AI generates, AI reviews, AI ships, value appears, no human attention required. You can practically hear the CEOs salivating: capital that generates value without labor, the one thing Marx said it couldn't do. "Take _that_, old man." But this is just adding another layer to the same broken system. The mistake has already been made; review is always too late to address root causes. And if nobody in the loop understands the code, the attention debt doesn't vanish. It compounds silently until a support ticket is filed that the AI cannot resolve, because the fix requires understanding why the system was built the way it was, and nobody knows anymore. A human has to pay the attention debt all at once, with no context, under pressure.
+The booster-class response is obvious: just have the AI do the review too. Close the loop. AI generates, AI reviews, AI ships, value appears, no human attention required. You can practically hear the CEOs salivating: capital that generates value without labor, the one thing Marx said it couldn't do. "Take _that_, old man."
+
+But review without understanding isn't review. It's just another layer of pattern-matching on top of the first layer of pattern-matching. A human reviewer catches problems because they bring directed attention: they understand the system, they know what _should_ be true, they can spot when something is technically correct but architecturally wrong. An AI reviewer can check syntax and run tests, but it can't know that this particular change undermines an invariant that three other services depend on, because nobody told it and it doesn't understand why the system is shaped the way it is.
+
+And if nobody in the loop has that understanding, the attention debt doesn't vanish. It compounds silently until a support ticket is filed that the AI cannot resolve, because the fix requires knowing why the system was built the way it was, and nobody knows anymore, or never did. A human has to pay the debt all at once, with no context, under pressure.
 
 [Deming](https://en.wikipedia.org/wiki/W._Edwards_Deming) saw this decades ago in manufacturing. Adding QA inspection layers _reduces_ individual accountability. When everyone knows there's another check downstream, they stop checking their own work. The layers don't compound quality; they dilute responsibility. Nobody feels like quality is their job.
 
-Through the lens: review layers are attention-routing systems, and badly designed ones leak. When you add a QA layer, you're not adding attention to the system. You're spreading the same attention thinner across more people, each of whom feels less ownership. The total attention spent might even go _down_. Marx saw the same thing in the factory: subdividing labor increases throughput but alienates the worker from the product. Quality suffers because nobody holds the whole thing in their head anymore.
-
+Review layers are attention-routing systems, and badly designed ones leak. When you add a QA layer, you're not adding attention to the system. You're spreading the same attention thinner across more people, each of whom feels less ownership. The total attention spent might even go _down_. Marx saw the same thing in the factory: subdividing labor increases throughput but alienates the worker from the product. Quality suffers because nobody holds the whole thing in their head anymore.
 
 There's a whole genre of post right now about spec-driven development: [write the spec, let the AI build it](https://haskellforall.com/2026/03/a-sufficiently-detailed-spec-is-code). Make the code [disposable and regenerable](https://aicoding.leaflet.pub/3majnyfydzs2y), keep only the intent. It's appealing. But as Gabriella Gonzalez (creator of [Dhall](https://dhall-lang.org/)) observes: a sufficiently detailed spec _is_ code. If you write a specification precise enough for an AI to generate correct code from it, you've already done the hard work. You've spent the attention. The spec didn't save you anything; it just moved where the attention went.
 
 This is attention laundering. You can shuffle the apparent cost around: write a spec instead of code, generate a PR instead of typing it, use a framework that hides the complexity. And yes, you can have the AI write the spec too. Turtles all the way down. But the actual attention required to produce something _correct and understood_ doesn't compress. At some point someone has to actually understand the problem being solved.
-
 
 Then there's the emotional layer. Developers are [comparing AI coding to gambling](https://notes.visaint.space/ai-coding-is-gambling/): pull the lever, get a result, pull again. It's "preposterously addicting" precisely because it removes the cognitive burden. Simon Willison coined "[deep blue](https://simonwillison.net/2026/Feb/15/deep-blue/)" for the existential dread underneath: _what was I even for?_ But the work also feels hollow. You're spending your time "mopping up how poorly things have been connected" rather than actually solving problems.
 
@@ -71,11 +71,11 @@ The pattern repeats at every level. Submit it and the reviewer pays. Add review 
 
 And of course, there's a pitch being made that solves all of these problems at once. The frontier model companies, the LinkedIn-consultant-CEO-AI-booster class, a thousand breathless threads, all selling the same dream: the LLMs have ingested a hyperdimensional superset of all the attention ever paid into their massive training corpora. All that accumulated human comprehension, distilled into an API. Shake the shaker, get the flavor. Pay by the token for the privilege.
 
-And in a way, from a certain angle, they kinda do? LLMs really have encoded patterns from an unfathomable volume of human thought. The model really can produce things that look like the output of comprehension. The spice shaker genuinely tastes like something.
+And in a way, from a certain angle, they kinda do? LLMs really have encoded patterns from an enormous volume of human thought. The model really can produce things that look like the output of comprehension. The spice shaker really does taste like something.
 
 But what comes out is _diffuse_ attention, not _directed_ attention. The model has seen a million solutions to problems that look vaguely like yours. It hasn't verified that any of them actually work in your specific context. A good software product says "we understood this problem and here's the solution." The spice shaker says "this looks like what solutions to problems like yours usually look like." The flavor without the nutrition.
 
-This is why LLMs work beautifully as _amplifiers_ for directed human attention and badly as _replacements_ for it. When a knowledgeable human aims the model at a problem they understand, the diffuse patterns get focused by the human's comprehension. That's genuinely powerful. But when nobody in the loop understands the problem, you get plausible output aimed at nothing. (Sure, the AI-heads will say: fine, we'll train more directed models, let a thousand flowers bloom. Maybe! But each of those flowers will need its own directed attention to cultivate. The conservation law doesn't care how many models you train.)
+This is why LLMs work beautifully as _amplifiers_ for directed human attention and badly as _replacements_ for it. When a knowledgeable human aims the model at a problem they understand, the diffuse patterns get focused by the human's comprehension. That's powerful. But when nobody in the loop understands the problem, you get plausible output aimed at nothing. (Sure, the AI-heads will say: fine, we'll train more directed models, let a thousand flowers bloom. Maybe! But each of those flowers will need its own directed attention to cultivate. The conservation law doesn't care how many models you train.)
 
 Marx would call the broader pitch [commodity fetishism](https://en.wikipedia.org/wiki/Commodity_fetishism): mistaking the product for the labor that produced it. The pitch collapses the distinction between "pattern-matched against a corpus of human comprehension" and "comprehended." Those are not the same thing. One is a product. The other is a process. The product can be bought and sold. The process has to be lived through.
 
@@ -95,9 +95,9 @@ If LLMs democratize knowledge and capability, if they make it so a solo develope
 
 ## Amplifier or Replacement
 
-But you can use the product to _accelerate_ the process without substituting one for the other. And this is where the frame gets practical. If AI helps you _skip_ attention, if nobody actually understands the thing that shipped, the product degrades. Buggy, confusing, unreliable software doesn't save user attention. It _costs_ user attention. The multiplier inverts. You've produced something that consumes more attention than it saves, and at that point it's not really technology in any meaningful sense. It's just generated stuff that someone downstream has to deal with.
+If AI helps you _skip_ attention, if nobody actually understands the thing that shipped, the product degrades. Buggy, confusing, unreliable software doesn't save user attention. It _costs_ user attention. The multiplier inverts. You've produced something that consumes more attention than it saves, and at that point it's not really technology in any real sense. It's just generated stuff that someone downstream has to deal with.
 
-But if AI helps you spend attention more _effectively_, automating the mechanical work so you can focus your comprehension on the parts that matter, the multiplier improves. More attention-saving delivered to users per unit of attention spent building. That's genuinely good. That's technology doing what technology is supposed to do.
+But if AI helps you spend attention more _effectively_, automating the mechanical work so you can focus your comprehension on the parts that matter, the multiplier improves. More attention-saving delivered to users per unit of attention spent building. That's good. That's technology doing what technology is supposed to do.
 
 The distinction isn't whether AI was involved. It's whether the humans in the loop spent enough attention to ensure the output is understood, not just functional. The socially necessary attention, in Marx's framing, for the thing to have real use-value.
 
