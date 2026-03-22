@@ -45,7 +45,7 @@ If LLMs _can_ democratize knowledge and capability, if they make it so a solo de
 
 ## Who Owns the Attention Capital
 
-The frontier models are the largest accumulation of attention capital in history: the entire corpus of human comprehension, scraped and compressed into a handful of proprietary systems. And the per-token pricing model is — if we're being honest about it — rent extraction on that capital. Metered access to distilled human thought, sold back to the people who produced it. The landlord changed, but the structure is familiar. Marx would recognize this one too: enclosure of the commons, dressed up as democratization.
+The frontier models are the largest accumulation of attention capital in history: the entire corpus of human comprehension, scraped and compressed into a handful of proprietary systems. And the per-token pricing model is — if we're being honest about it — rent extraction on that capital. Metered access to distilled human thought, sold back to the people who produced it. Oh good, a new class of landlords. Marx would recognize this one: enclosure of the commons, dressed up as democratization.
 
 I don't think this is the permanent state of things, but I'm not going to pretend the arc bends inevitably toward openness, either. The cloud era was supposed to democratize infrastructure, and what it actually produced was vast accumulations of capital into a handful of billionaire-controlled conglomerates. We're all still pining for the web we lost, the one that got enclosed by the _other_ attention economy, the demand-side one, the one that figured out how to monetize eyeballs and strip-mined the commons in the process.
 
