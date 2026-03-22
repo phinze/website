@@ -21,7 +21,7 @@ But the value of what comes out depends entirely on the attention going in. The 
 
 (Sure, the AI-heads will say: fine, we'll train more directed models, let a thousand flowers bloom. Maybe! But each of those flowers will need its own directed attention to cultivate. The conservation law doesn't care how many models you train.)
 
-Marx would call the broader pitch [commodity fetishism](https://en.wikipedia.org/wiki/Commodity_fetishism): mistaking the product for the labor that produced it. The pitch collapses the distinction between "pattern-matched against a corpus of human comprehension" and "comprehended." Those are not the same thing. One is a product. The other is a process. The product can be bought and sold. The process has to be lived through.
+Marx would call this [commodity fetishism](https://en.wikipedia.org/wiki/Commodity_fetishism): treating a product as if its value is inherent, forgetting the labor that produced it. The frontier model companies stand atop a massive accumulation of other people's attention — the entire written output of humanity, more or less — and say ["I made this."](https://nedroidcomics.tumblr.com/post/41879001445/the-internet) The model is presented as their innovation, their product, their capital. But the value in it is the comprehension-labor of millions of people who never agreed to the deal.
 
 ## The SaaSpocalypse
 
