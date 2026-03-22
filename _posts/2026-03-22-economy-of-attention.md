@@ -17,7 +17,7 @@ Not "the attention economy" — that's the demand-side concept, who can capture 
 
 AI has made generating code almost free. It has not made _understanding_ code any cheaper. That gap is the source of almost everything we're all feeling right now.
 
-## Dead Attention
+## Software is Dead Attention
 
 An old idea in new clothes: a software system is accumulated attention, crystallized into something useful.
 
@@ -31,7 +31,7 @@ Why does this matter now? Because the _whole point_ of building software is to c
 
 The best software has a spectacular ratio. Years of focused human comprehension on the building side, millions of hours of saved effort on the usage side. That's the whole game. That's why we do this.
 
-## Look at All This Discourse
+## My, Look at All This Discourse!
 
 Once you see software as an attention economy with a conservation law, a lot of the current discourse snaps into focus. I've been reading a stack of recent posts, all circling the same thing from different angles: the attention has to be spent, and every apparent escape hatch just moves it somewhere else.
 
@@ -41,7 +41,7 @@ The old implicit contract was roughly balanced. Writing a patch took effort. Sub
 
 Now you can generate a plausible-looking patch in thirty seconds. The code might be correct. It might even be good. But **the reviewer has no way to know that without spending their own attention**, and their attention hasn't gotten any cheaper.
 
-The conservation law is doing its thing. The attention cost of a correct patch didn't go down; the submitter's cost dropped to near-zero while the reviewer's stayed exactly the same. The asymmetry exploded. In Marxist terms, this is a familiar dynamic: the labor didn't disappear, it just stopped being shared. The maintainer now does the comprehension-work alone. (It's telling that people are already building [explicit trust systems](https://github.com/mitchellh/vouch) to replace the implicit filter that effort used to provide.)
+The conservation law is doing its thing. The attention cost of a correct patch didn't go down; the submitter's cost dropped to near-zero while the reviewer's stayed exactly the same. The asymmetry exploded. In Marxist terms, this is a familiar dynamic: the labor didn't disappear, it just stopped being shared. The maintainer now does the comprehension-work alone.
 
 There's a common observation making the rounds lately ([one recent version](https://apenwarr.ca/log/20260316) is sharp on the diagnosis, though its conclusions are questionable): every layer of review you add to a process costs dramatically more than the last. AI makes generation faster, but generation was never the bottleneck. Review is the bottleneck. And review is slow because it's _attention-intensive_: someone has to actually understand what changed and why.
 
@@ -69,15 +69,15 @@ The pattern repeats at every level. Submit it and the reviewer pays. Add review 
 
 ## Did You Spend the Attention?
 
-If the frame is useful, it should produce a simple rule of thumb: **did you spend at least as much attention as you're asking someone else to spend?**
+I find the whole "which lines did the LLM write" discourse tiresome. I get the impulse — maintainers are drowning in low-effort slop and need some way to sift through it. But "did AI type this bit" is a bad proxy for what they actually care about. If the frame is useful, it should give us a better one: **did you spend at least as much attention as you're asking someone else to spend?**
 
-This works across the whole spectrum of trust contexts. On a high-trust team where you've built up a long history of deposits into the shared attention budget, the dials can be set differently. Your teammates know you. They've seen your judgment. When you say "Claude and I looked into this and here's what we found," that's a meaningful signal because they trust that _you_ actually spent the attention, regardless of who typed the characters. The AI is a tool in the hands of someone they trust.
+That cuts through a lot of the nitpicking. For those of us experimenting with these tools — and that's what you do with new tools! — a culture that polices toolchains instead of outcomes creates fear around exactly the kind of experimentation we need right now.
 
-First-time open source contributions are on the opposite end of the trust spectrum. The only signal the maintainer has is the contribution itself and the interaction around it. An AI-generated PR with a generated description _appears_ to have cost you nothing, even if you actually spent thirty minutes in careful back-and-forth with an AI. The economy doesn't balance from the reviewer's perspective.
+(If you want to opt out of these tools entirely, I respect that. I share concerns about transparency, consent, attribution, and resource usage, and I feel the dissonance. I'll keep grappling, and maybe write about that grappling at some point. But right now I'm focused on the middle of the discourse: where are the lines for those of us who _do_ use these tools?)
 
-I get why people are reaching for "did AI write this?" as a quality signal. Maintainers are drowning in low-effort slop and they need some way to sift through it. But "which lines did the LLM type" is a bad proxy for what they actually care about, which is: did the person on the other end put in the work to understand what they're submitting?
+The heuristic works across the whole spectrum of trust. On a high-trust team where you've built up a long history of deposits into the shared attention budget, the dials can be set differently. Your teammates know you. They've seen your judgment. When you say "Claude and I looked into this and here's what we found," that's a meaningful signal because they trust that _you_ actually spent the attention, regardless of who typed the characters. The AI is a tool in the hands of someone they trust.
 
-If you want to opt out of these tools entirely, I respect that, genuinely. But for the rest of us who are experimenting — and that's what you do with new tools! — a culture that polices toolchains instead of outcomes creates fear around exactly the kind of experimentation we need right now. The better question is whether a human spent sufficient attention. And "sufficient" is relative to how much attention you're asking from others.
+First-time open source contributions are on the opposite end. The only signal the maintainer has is the contribution itself and the interaction around it. The available signal sources are low, and that's a real problem — not because AI is evil, but because the maintainer has no way to tell whether the person on the other end actually understands what they're submitting. Squinting at a PR description for LLM-iness is understandable but ultimately a dead end. Better to focus on systems and norms that actually carry signal: [webs of trust](https://github.com/mitchellh/vouch) that let humans vouch for humans, or clear disclosure guidelines that ask contributors to show up as themselves — "hi, human here, worked with Claude on this, here's the result, I think it's right, please let me know." That's a person spending attention. You can work with that. The question isn't whether AI touched the code. It's whether a human spent sufficient attention. And "sufficient" is relative to how much attention you're asking from others.
 
 Still choppy out there; hard not to get a little seasick. But hey, at least I found this buoy, and we'll keep charting the seas together.
 
