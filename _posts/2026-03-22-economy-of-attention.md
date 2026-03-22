@@ -1,11 +1,11 @@
 ---
-title: "AI and the Means of Attention"
+title: "The Economy of Attention"
 slug:  economy-of-attention
-date:  2026-03-21
+date:  2026-03-22
 listed: false
 ---
 
-*This is an early draft I'm sharing for feedback. Please don't share widely, and hit me with your thoughts! [Last updated](https://github.com/phinze/phinze.github.io/commits/main/_posts/2026-03-21-economy-of-attention.md): 2026-03-21 ~3:45pm CT.*
+*This is an early draft I'm sharing for feedback. Please don't share widely, and hit me with your thoughts! [Last updated](https://github.com/phinze/phinze.github.io/commits/main/_posts/2026-03-22-economy-of-attention.md): 2026-03-22 ~10am CT.*
 
 There's a lot of foam on the water right now. AI is remaking how software gets built, and our whole industry is metabolizing the change in public. Maintainers are overwhelmed! Systems thinkers are drawing new diagrams! Individual developers are writing about how their own workflows feel different in ways they can't quite name! Is it a tailspin? An ouroboros of navel-gazing, the discourse eating its own tail? Or are we in a chrysalis, goo right now but about to emerge reformed and beautiful? So many takes! So many emotions! And rightly so. There's a lot to figure out.
 
@@ -67,40 +67,6 @@ That hollow feeling is attention debt, experienced from the inside. Marx has a w
 
 The pattern repeats at every level. Submit it and the reviewer pays. Add review layers and they leak. Write specs instead and it's the same work in different clothes. Skip it entirely and it feels hollow. The attention has to be spent.
 
-## The Spice Shaker
-
-And of course, there's a pitch being made that solves all of these problems at once. The frontier model companies, the LinkedIn-consultant-CEO-AI-booster class, a thousand breathless threads, all selling the same dream: the LLMs have ingested a hyperdimensional superset of all the attention ever paid into their massive training corpora. All that accumulated human comprehension, distilled into an API. Shake the shaker, get the flavor. Pay by the token for the privilege.
-
-And in a way, from a certain angle, they kinda do? LLMs really have encoded patterns from an enormous volume of human thought. The model really can produce things that look like the output of comprehension. The spice shaker really does taste like something.
-
-But what comes out is _diffuse_ attention, not _directed_ attention. The model has seen a million solutions to problems that look vaguely like yours. It hasn't verified that any of them actually work in your specific context. A good software product says "we understood this problem and here's the solution." The spice shaker says "this looks like what solutions to problems like yours usually look like." The flavor without the nutrition.
-
-LLMs work beautifully as _amplifiers_ for directed human attention and badly as _replacements_ for it. When a knowledgeable human aims the model at a problem they understand, the diffuse patterns get focused by the human's comprehension. That's powerful. But when nobody in the loop understands the problem, you get plausible output aimed at nothing. (Sure, the AI-heads will say: fine, we'll train more directed models, let a thousand flowers bloom. Maybe! But each of those flowers will need its own directed attention to cultivate. The conservation law doesn't care how many models you train.)
-
-Marx would call the broader pitch [commodity fetishism](https://en.wikipedia.org/wiki/Commodity_fetishism): mistaking the product for the labor that produced it. The pitch collapses the distinction between "pattern-matched against a corpus of human comprehension" and "comprehended." Those are not the same thing. One is a product. The other is a process. The product can be bought and sold. The process has to be lived through.
-
-The logical extreme of this pitch is the "SaaSpocalypse," the market-level panic that every SaaS product is just one `.md` file away from being replaced by a Claude skill. Nearly a trillion dollars in software market cap wiped out on the premise that all the accumulated attention baked into these products can be reproduced by shaking the shaker hard enough.
-
-There's a site called [Death by Clawd](https://deathbyclawd.com/) that's savage, funny, and — intentionally or not — a perfect satire of the hysteria. You feed it a company URL and it generates a fake death certificate, a replacement SKILL.md file, and a eulogy. Replacement cost: ~$0.003 per run. Cause of death: "Claude learned to do it better than your silly little web app."
-
-I ran it on [Miren](https://deathbyclawd.com?url=miren.dev), the infrastructure platform I work on. It gave us a 38/100 survival score, a eulogy that begins "Dearly beloved, we gather here to remember Miren — a platform that dared to ask, 'What if Heroku, but again, but this time we call it modern?'" and a 31-line SKILL.md that generates Dockerfiles and Terraform configs.
-
-It's hilarious. It's also commodity fetishism in action. What the 31-line file can't reproduce is two years of accumulated attention from people who care about making deployment feel like a non-event. The design choices that make CI auth work without storing secrets. The UX decisions about what a developer should be thinking about (their app) versus what they shouldn't (load balancer configs). That's craft: human experience and taste, exported so others can benefit. The SKILL.md can generate configs. It can't generate taste. It took years of experience and years of attention to know what to build. (Or I'm wrong and we're killed in a year by a chatbot. Only time will tell!)
-
-The taxonomy of survivors and casualties is telling, too. The companies that score well are the ones where the accumulated attention is _deeply embedded_: physical infrastructure, regulatory knowledge, things you can't pattern-match your way through. The ones sweating are workflow abstractions where the attention was always thinner, always closer to the shape that an LLM can reproduce.
-
-And look — the Marxist in me has to say it — some of that sweating is _deserved_. Not all information asymmetry is the same. If your hard-won knowledge never made it into the training corpus — because it's proprietary, because it's too arcane, because it lives in the heads of people who learned it the hard way — the spice shaker can't reproduce it. But if your business model was milking a fat margin off the _shallow_ kind — well, information wants to be free, and it just got a lot freer. If the "value" you provided was mostly gatekeeping knowledge that's now freely accessible, then the conservation law is telling you something you maybe didn't want to hear: you never had that much accumulated attention in the first place. Your moat was opacity, not depth. The spice shaker _can_ reproduce thin attention. That's not a bug in the model. That's the forces of production disrupting the relations of production. That's how it's supposed to work.
-
-If LLMs democratize knowledge and capability, if they make it so a solo developer or a tiny team can do things that used to require an enterprise sales call, I'm all for it. That's [the world I'm helping build toward at work](https://miren.dev) anyway. Shake that shaker. Disrupt away.
-
-## Amplifier or Replacement
-
-If AI helps you _skip_ attention, if nobody actually understands the thing that shipped, the product degrades. Buggy, confusing, unreliable software doesn't save user attention. It _costs_ user attention. The multiplier inverts. You've produced something that consumes more attention than it saves, and at that point it's not really technology in any real sense. It's just generated stuff that someone downstream has to deal with.
-
-But if AI helps you spend attention more _effectively_, automating the mechanical work so you can focus your comprehension on the parts that matter, the multiplier improves. More attention-saving delivered to users per unit of attention spent building. That's good. That's technology doing what technology is supposed to do.
-
-The distinction isn't whether AI was involved. It's whether the humans in the loop spent enough attention to ensure the output is understood, not just functional. The socially necessary attention, in Marx's framing, for the thing to have real use-value.
-
 ## Did You Spend the Attention?
 
 If the frame is useful, it should produce a simple rule of thumb: **did you spend at least as much attention as you're asking someone else to spend?**
@@ -111,16 +77,6 @@ First-time open source contributions are on the opposite end of the trust spectr
 
 This isn't about whether AI touched the code. I find the whole "which lines did the LLM write" discourse tiresome and counterproductive. If you want to opt out of these tools entirely, I respect that, genuinely. But for the rest of us who are experimenting — and that's what you do with new tools! — a culture that polices toolchains instead of outcomes creates fear around exactly the kind of experimentation we need right now. The question that matters is whether a human spent sufficient attention. And "sufficient" is relative to how much attention you're asking from others.
 
-## Who Owns the Means of Attention
+LLMs are _amplifiers_ for directed human attention, not _replacements_ for it. When a knowledgeable human aims the model at a problem they understand, the diffuse patterns get focused by the human's comprehension. That's powerful. But when nobody in the loop understands the problem, you get plausible output aimed at nothing. The attention has to be spent. The tools just change how efficiently you can spend it.
 
-The big question isn't whether the conservation law holds. It's who controls the infrastructure that attention flows through.
-
-Right now, the frontier models are controlled by a handful of companies, and the per-token pricing model is — if we're being honest about it — a new form of rent extraction. The entire corpus of human attention, scraped and compressed, sold back to us at metered rates. The landlord changed, but the structure is familiar. Marx would recognize this one too: enclosure of the commons, dressed up as democratization.
-
-I don't think this is the permanent state of things, but I'm not going to pretend the arc bends inevitably toward openness, either. The cloud era was supposed to democratize infrastructure, and what it actually produced was vast accumulations of capital into a handful of billionaire-controlled conglomerates. We're all still pining for the web we lost, the one that got enclosed by the _other_ attention economy, the demand-side one, the one that figured out how to monetize eyeballs and strip-mined the commons in the process.
-
-So I hold the hope honestly but not naively: that the spirit of open source and the DIY ethos that built the internet will have its counterpunch here. The big corporate models are truly frontier _now_, but not forever. Hardware gets cheaper. Training techniques get more efficient. Community datasets get built with consent and transparency.
-
-The version I want to believe in — and want to help build — is the one where the tools of attention-amplification are collectively owned. Transparent models, trained on community data by community resources, runnable on commodity hardware. Not because the conservation law stops applying, but because the _gains_ from better attention-tooling should flow to the people spending the attention, not to the platform extracting rent on every token.
-
-We'll see. The substructure holds either way. But the superstructure, who benefits, who pays, who decides, that part is still being written. And that's the part worth paying attention to.
+*This is the first of two posts. The second, [The Spice Shaker](/writing/spice-shaker), picks up the frame and asks: what's being sold to us, and who should own the tools?*
