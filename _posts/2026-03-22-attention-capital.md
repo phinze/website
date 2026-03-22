@@ -5,7 +5,7 @@ date:  2026-03-22
 listed: false
 ---
 
-*This is an early draft I'm sharing for feedback. Hit me with your thoughts! [Last updated](https://github.com/phinze/phinze.github.io/commits/main/_posts/2026-03-22-attention-capital.md): 2026-03-22 ~3:45pm CT.*
+*This is an early draft I'm sharing for feedback. Hit me with your thoughts! [Last updated](https://github.com/phinze/phinze.github.io/commits/main/_posts/2026-03-22-attention-capital.md): 2026-03-22 ~5:15pm CT.*
 
 In [the last post](/writing/economy-of-attention) we built a frame: software is accumulated attention. LLMs have given us incredible new tools for manipulating text and code, but they cannot substitute the attention required to construct and maintain a working system. You can chase the attention around, but you can't skip it.
 
@@ -19,7 +19,7 @@ Okay but jokes aside, I'm not here to dismiss the whole thing. LLMs really have 
 
 But the value of what comes out depends entirely on the attention going in. The pitch is that LLMs are a _replacement_ for human attention. My claim is that they're an _amplifier_.
 
-Good technology replaces comprehension all the time! Millions of people ride the bus without understanding combustion engines. I've been writing code for twenty years and I can count on one hand the number of times I've had to think about CPU registers (either school, or very very bad times). That's what a strong abstraction does: it lets you build on top of something without understanding its internals. And LLMs genuinely do this for a lot of use cases. Non-technical people are getting real value from them right now, no comprehension of transformers required. The abstraction holds.
+Good technology replaces comprehension all the time! Millions of people ride the bus without understanding combustion engines. I've been writing code for twenty years and I can count on one hand the number of times I've had to think about CPU registers (either school, or very very bad times). That's what a strong abstraction does: it lets you build on top of something without understanding its internals. And LLMs genuinely do this for a lot of use cases. Non-technical people are getting real value from them right now, no comprehension of transformers required. The abstraction holds, up to a point.
 
 The abstraction leaks when you need to _change, debug, or extend_ the system. The bus rider doesn't need to understand the engine. The mechanic does. And if you replace all the mechanics with people who also just ride the bus, your fleet works great until the first breakdown. The AI industry is claiming they've built a non-leaky abstraction over human comprehension. The conservation law says that's not possible above a certain complexity threshold. For simple stuff, the abstraction holds fine. For complex systems that other people depend on, it leaks, and when it leaks, someone has to have the comprehension to deal with it.
 
