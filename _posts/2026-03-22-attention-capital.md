@@ -45,8 +45,6 @@ If LLMs _can_ democratize knowledge and capability, if they make it so a solo de
 
 ## Who Owns the Attention Capital
 
-The big question isn't whether the conservation law holds. It's who owns the capital.
-
 The frontier models are the largest accumulation of attention capital in history: the entire corpus of human comprehension, scraped and compressed into a handful of proprietary systems. And the per-token pricing model is — if we're being honest about it — rent extraction on that capital. Metered access to distilled human thought, sold back to the people who produced it. The landlord changed, but the structure is familiar. Marx would recognize this one too: enclosure of the commons, dressed up as democratization.
 
 I don't think this is the permanent state of things, but I'm not going to pretend the arc bends inevitably toward openness, either. The cloud era was supposed to democratize infrastructure, and what it actually produced was vast accumulations of capital into a handful of billionaire-controlled conglomerates. We're all still pining for the web we lost, the one that got enclosed by the _other_ attention economy, the demand-side one, the one that figured out how to monetize eyeballs and strip-mined the commons in the process.
@@ -55,4 +53,4 @@ So I hold the hope honestly but not naively: that the spirit of open source and 
 
 But my dream is we can get to something shaped like: tools of attention-amplification that are collectively owned. Transparent models, trained on community data by community resources, runnable on commodity hardware. Not because the conservation law stops applying, but because the _gains_ from better attention-tooling should flow to the people spending the attention, not to the platform extracting rent on every token. I'd like to learn more about the people building toward that, and I'd like to help where I can.
 
-We'll see. The substructure holds either way. But the superstructure, who benefits, who pays, who decides, that part is still being written. And that's the part worth paying attention to.
+We'll see. The substructure holds either way. But the superstructure, who benefits, who pays, who decides, that part is still being written. And that's the part worth — well, you know.
