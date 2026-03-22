@@ -17,11 +17,17 @@ The pitch, as delivered by frontier model companies, the LinkedIn-consultant-CEO
 
 Okay but jokes aside, I'm not here to dismiss the whole thing. LLMs really have encoded patterns from an enormous volume of human thought. The model really can produce things that look like the output of comprehension, and that output can have truly immense value! The spice shaker really does taste like something.
 
-But the value of what comes out depends entirely on the attention going in. The flavor without the nutrition is what you get when nobody in the loop is steering.
+But the value of what comes out depends entirely on the attention going in. The pitch is that LLMs are a _replacement_ for human attention. My claim is that they're an _amplifier_. The distinction matters, and it's more nuanced than it sounds.
+
+Good technology replaces comprehension all the time! Millions of people ride the bus without understanding combustion engines. Developers write code without knowing machine code. That's what a strong abstraction does: it lets you build on top of something without understanding its internals. And LLMs genuinely do this for a lot of use cases. Non-technical people are getting real value from them right now, no comprehension of transformers required. The abstraction holds.
+
+The abstraction leaks when you need to _change, debug, or extend_ the system. The bus rider doesn't need to understand the engine. The mechanic does. And if you replace all the mechanics with people who also just ride the bus, your fleet works great until the first breakdown. The AI industry is claiming they've built a non-leaky abstraction over human comprehension. The conservation law says that's not possible above a certain complexity threshold. For simple stuff, the abstraction holds fine. For complex systems that other people depend on, it leaks, and when it leaks, someone has to have the comprehension to deal with it.
+
+So where LLMs help you spend attention more _effectively_, automating the mechanical work so you can focus your comprehension on the parts that matter, the multiplier improves. That's good. That's technology doing what technology is supposed to do. But where they help you _skip_ attention entirely, the output degrades. The flavor without the nutrition. Someone downstream has to pay the attention debt.
 
 (Sure, the AI-heads will say: fine, we'll train more directed models, let a thousand flowers bloom. Maybe! But each of those flowers will need its own directed attention to cultivate. The conservation law doesn't care how many models you train.)
 
-Marx would call this [commodity fetishism](https://en.wikipedia.org/wiki/Commodity_fetishism): treating a product as if its value is inherent, forgetting the labor that produced it. The frontier model companies stand atop a massive accumulation of other people's attention — the entire written output of humanity, more or less — and say ["I made this."](https://nedroidcomics.tumblr.com/post/41879001445/the-internet) The model is presented as their innovation, their product, their capital. But the value in it is the comprehension-labor of millions of people who never agreed to the deal.
+Marx would call the broader pitch [commodity fetishism](https://en.wikipedia.org/wiki/Commodity_fetishism): treating a product as if its value is inherent, forgetting the labor that produced it. The frontier model companies stand atop a massive accumulation of other people's attention — the entire written output of humanity, more or less — and say ["I made this."](https://nedroidcomics.tumblr.com/post/41879001445/the-internet) The model is presented as their innovation, their product, their capital. But the value in it is the comprehension-labor of millions of people who never agreed to the deal.
 
 ## The SaaSpocalypse
 
@@ -36,14 +42,6 @@ I laughed, I cried, I laughed again. I ran it on my friends' companies. This thi
 And look — the Marxist in me has to say it — some of this SaaS sweating is _deserved_. There _is_ a class of business that extracted fat margins from gatekeeping expertise — the consultant class, the legal-brief-industrial-complex, the whole ecosystem of industries whose value proposition was "you can't understand this without us." Information wants to be free, and it just got a lot freer. The spice shaker _can_ reproduce thin attention. That's the forces of production disrupting the relations of production. Please enjoy the capitalism you ordered, dear sirs.
 
 If LLMs democratize knowledge and capability, if they make it so a solo developer or a tiny team can do things that used to require an enterprise sales call, I'm all for it. That's [the world I'm helping build toward at work](https://miren.dev) anyway. Shake that shaker.
-
-## Amplifier or Replacement
-
-If AI helps you _skip_ attention, if nobody actually understands the thing that shipped, the product degrades. Buggy, confusing, unreliable software doesn't save user attention. It _costs_ user attention. The multiplier inverts. You've produced something that consumes more attention than it saves, and at that point it's not really technology in any real sense. It's just generated stuff that someone downstream has to deal with.
-
-But if AI helps you spend attention more _effectively_, automating the mechanical work so you can focus your comprehension on the parts that matter, the multiplier improves. More attention-saving delivered to users per unit of attention spent building. That's good. That's technology doing what technology is supposed to do.
-
-The distinction isn't whether AI was involved. It's whether the humans in the loop spent enough attention to ensure the output is understood, not just functional. The socially necessary attention, in Marx's framing, for the thing to have real use-value.
 
 ## Who Owns the Attention Capital
 
