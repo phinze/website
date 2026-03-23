@@ -2,10 +2,7 @@
 title: "Who Owns the Attention Capital"
 slug:  attention-capital
 date:  2026-03-22
-listed: false
 ---
-
-*This is an early draft I'm sharing for feedback. Hit me with your thoughts! [Last updated](https://github.com/phinze/phinze.github.io/commits/main/_posts/2026-03-22-attention-capital.md): 2026-03-22 ~5:15pm CT.*
 
 In [the last post](/writing/economy-of-attention) we built a frame: software is accumulated attention. LLMs have given us incredible new tools for manipulating text and code, but they cannot substitute the attention required to construct and maintain a working system. You can chase the attention around, but you can't skip it.
 

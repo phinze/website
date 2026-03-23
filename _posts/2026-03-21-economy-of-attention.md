@@ -2,10 +2,7 @@
 title: "The Economy of Attention"
 slug:  economy-of-attention
 date:  2026-03-21
-listed: false
 ---
-
-*This is an early draft I'm sharing for feedback. Hit me with your thoughts! [Last updated](https://github.com/phinze/phinze.github.io/commits/main/_posts/2026-03-21-economy-of-attention.md): 2026-03-22 ~5:15pm CT.*
 
 Ahoy, software-slinging mateys! There's a lot of foam on the water right now. AI is remaking how software gets built, and our whole industry is metabolizing the change in public. Maintainers are overwhelmed! Systems thinkers are drawing new diagrams! Individual developers are writing about how their own workflows feel different in ways they can't quite name! Is it a tailspin? An ouroboros of navel-gazing, the discourse eating its own tail? Or are we in a chrysalis, goo right now but about to emerge reformed and beautiful? So many takes! So many emotions! And rightly so. There's a lot to figure out.
 
