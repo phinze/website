@@ -106,6 +106,17 @@ header:
 ---
 ```
 
+## Writing Voice
+
+When collaborating on blog posts, read existing posts to calibrate voice before drafting. The voice ranges from goofy/warm to essayistic — match the material. Key things:
+
+- **H2-only** heading structure in posts (no h3s)
+- **Em dashes**: budget consciously — LLMs overuse them. A handful per post, for genuine asides.
+- **Be precise with theory**: when invoking a thinker (Marx, Deming, etc.), understand what's their concept vs. your riff on it
+- **Transparent about process**: if AI was used in writing, be open about it
+
+See the `write-post` skill for the full collaborative writing process.
+
 ## Deployment
 
 This is a GitHub Pages site. Pushing to the `main` branch triggers automatic deployment. The live site is at https://phinze.com (configured via CNAME).
