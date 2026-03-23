@@ -75,6 +75,6 @@ First-time open source contributions are on the opposite end. The maintainer has
 
 Cards on the table: I used LLMs heavily in writing this very post. You could dismiss it as slop because an LLM typed most of the prose, but my claim is there's something worthwhile in here. This is the result of [hours of back-and-forth](https://github.com/phinze/phinze.github.io/commits/main/_posts/2026-03-21-economy-of-attention.md) across multiple LLM sessions. I've typed thousands of words into those sessions; very few of them directly into my editor. If I had typed "yo Claude, read these five articles and give me a post that gets me into The Discourse" the result would have been thin, heavy on LLMisms, light on insight. The difference is the attention I brought to the process. Or at least I think so! If you think these ideas are wrong, I'd love to hear why — that's a conversation worth having. But if you'd dismiss them solely because an LLM touched the prose, I'll gently point out that you _did_ make it to the bottom of the piece. ;)
 
-It's definitely still choppy out there; hard not to get a little seasick. But hey, at least I found this buoy, and we'll keep charting the seas together.
+The seas haven't settled; hard not to get a little seasick. But hey, at least I found this buoy, and we'll keep charting the seas together.
 
 In [my next post](/writing/attention-capital) I take this frame and ask some new questions: what exactly is the AI industry selling us, and who should own the tools that amplify our attention?
