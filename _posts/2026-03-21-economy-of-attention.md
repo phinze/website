@@ -10,7 +10,7 @@ All of which leaves a body looking for anchor points. Navigation buoys on the sa
 
 I've been calling mine **the economy of attention**.
 
-Not "the attention economy" — that's the demand-side concept, who can capture your eyeballs. This is the supply side, the other usage of "economy," as in "economy of motion." Attention as a scarce resource that has to be _spent_ to produce anything of value. Think of it as a conservation law: the attention required to produce correct, understood software can't be created or destroyed, only moved around. If less is spent in one place, more has to be spent somewhere else.
+Not "the attention economy" — that's the demand-side concept, who can capture your eyeballs. This is the supply side, the other usage of "economy." Attention as a scarce resource that has to be _spent_ to produce anything of value. Think of it as a conservation law: the attention required to produce correct, understood software can't be created or destroyed, only moved around. If less is spent in one place, more has to be spent somewhere else.
 
 AI has made generating code almost free. It has not made _understanding_ code any cheaper. That gap is the source of almost everything we're all feeling right now.
 
