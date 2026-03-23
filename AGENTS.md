@@ -92,9 +92,10 @@ The site uses a custom brutalist theme (`brutalist.css` + `site.css`) with:
 title: "Post Title"
 slug: short-slug
 date: YYYY-MM-DD
-listed: true  # Controls visibility in writing index
 ---
 ```
+
+Posts are listed by default. Only include `listed: false` to hide a post from the writing index.
 
 ### Talk Front Matter
 ```yaml
