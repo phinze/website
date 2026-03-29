@@ -18,6 +18,7 @@
   --font-sans: 'Public Sans', system-ui, -apple-system, sans-serif;
   --font-mono: 'Hack', 'Courier New', monospace;
   --max-width: 65ch;
+  --color-code-bg: rgba(0, 0, 0, 0.06);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -28,6 +29,7 @@
     --color-border: #555;
     --color-border-light: #333;
     --color-muted: #999;
+    --color-code-bg: rgba(255, 255, 255, 0.1);
   }
 }
 
@@ -193,7 +195,10 @@ section h2 {
 /* === CODE === */
 code {
   font-family: var(--font-mono);
-  font-size: 0.875em;
+  font-size: 0.84em;
+  background: var(--color-code-bg);
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
 }
 
 pre {
@@ -205,6 +210,9 @@ pre {
 
 pre code {
   font-size: 0.875rem;
+  background: none;
+  padding: 0;
+  border-radius: 0;
 }
 
 /* === HORIZONTAL RULES === */
