@@ -1,0 +1,7 @@
+name = "umami"
+
+[services.web]
+port = 3000
+
+[addons.miren-postgresql]
+variant = "shared"
