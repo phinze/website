@@ -2,6 +2,7 @@
 layout: default
 title: Speaking
 class: speaking
+permalink: /speaking/
 ---
 
 <section>

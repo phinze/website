@@ -2,6 +2,7 @@
 layout: default
 title: Writing
 class: writing
+permalink: /writing/
 ---
 
 <section>

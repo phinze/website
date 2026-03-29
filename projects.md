@@ -2,6 +2,7 @@
 layout: default
 title: Projects
 class: projects
+permalink: /projects/
 ---
 
 <section>
