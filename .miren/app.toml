@@ -1,0 +1,8 @@
+name = 'phinze.github.io'
+post_import = ''
+env = []
+include = []
+
+[services.web]
+command = "nginx -g 'daemon off;'"
+port = 80
