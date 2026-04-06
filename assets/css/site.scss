@@ -3,12 +3,7 @@
 
 /* Brutalist design - most styles in brutalist.css */
 
-/* Code block syntax highlighting adjustments */
-pre.highlight {
-  background: transparent;
-  border: 1px solid var(--color-border);
-}
-
+/* Code block syntax highlighting — defer to brutalist.css */
 pre.highlight > code {
   background: transparent;
 }

@@ -19,6 +19,8 @@
   --font-mono: 'Hack', 'Courier New', monospace;
   --max-width: 65ch;
   --color-code-bg: rgba(0, 0, 0, 0.06);
+  --color-syntax-string: #6a7b3a;
+  --color-syntax-number: #8b5a2b;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -30,6 +32,8 @@
     --color-border-light: #333;
     --color-muted: #999;
     --color-code-bg: rgba(255, 255, 255, 0.1);
+    --color-syntax-string: #a3be8c;
+    --color-syntax-number: #d08770;
   }
 }
 
@@ -203,17 +207,69 @@ code {
 
 pre {
   overflow-x: auto;
-  margin: 1rem 0;
-  padding: 1rem;
-  border: 1px solid var(--color-border);
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  background: var(--color-code-bg);
+  border: none;
+  border-left: 3px solid var(--color-purple);
 }
 
 pre code {
-  font-size: 0.875rem;
+  font-size: 0.84rem;
+  line-height: 1.55;
   background: none;
   padding: 0;
   border-radius: 0;
 }
+
+/* Syntax highlighting — restrained palette */
+.highlight .k,
+.highlight .kd,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr,
+.highlight .kt,
+.highlight .kc,
+.highlight .ow { color: var(--color-purple); }           /* keywords */
+
+.highlight .s,
+.highlight .s1,
+.highlight .s2,
+.highlight .sa,
+.highlight .sb,
+.highlight .sc,
+.highlight .sd,
+.highlight .se,
+.highlight .sh,
+.highlight .si,
+.highlight .sl,
+.highlight .sr,
+.highlight .sx,
+.highlight .dl { color: var(--color-syntax-string); }     /* strings */
+
+.highlight .c,
+.highlight .c1,
+.highlight .ch,
+.highlight .cm,
+.highlight .cp,
+.highlight .cpf,
+.highlight .cs { color: var(--color-muted); font-style: italic; }  /* comments */
+
+.highlight .na,
+.highlight .nc,
+.highlight .nf,
+.highlight .fm,
+.highlight .nn { color: var(--color-text); }              /* names — no change, just explicit */
+
+.highlight .mi,
+.highlight .mf,
+.highlight .mh,
+.highlight .mo,
+.highlight .mb,
+.highlight .il { color: var(--color-syntax-number); }     /* numbers */
+
+.highlight .nt { color: var(--color-purple); }             /* HTML/XML tags */
+.highlight .na { color: var(--color-syntax-string); }      /* attributes (in HTML context) */
 
 /* === HORIZONTAL RULES === */
 hr {
