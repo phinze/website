@@ -3,5 +3,9 @@ name = "umami"
 [services.web]
 port = 3000
 
+[services.web.concurrency]
+mode = "fixed"
+num_instances = 1
+
 [addons.miren-postgresql]
 variant = "shared"
