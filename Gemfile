@@ -7,6 +7,10 @@ gem "kramdown-parser-gfm"
 
 gem "tzinfo-data"
 
+# Pin activesupport to 7.x; 8.x emits Logger warnings under Jekyll 4.2.
+# 7.2.3.1 patches the Dependabot-flagged ReDoS / XSS issues.
+gem "activesupport", "~> 7.2.3", ">= 7.2.3.1"
+
 # Jekyll serve seems to complain about webrick w/o this specific dependency
 gem "webrick", "~> 1.8"
 
