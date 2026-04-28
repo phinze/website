@@ -91,7 +91,7 @@ Every feature traces back to a moment of actually using the thing. I never sat d
 
 ## Houseplant Programming
 
-Hannah Ilea has a lovely framing for this kind of work: [houseplant programming](https://hannahilea.com/blog/houseplant-programming/). Tiny software, just for yourself. It doesn't need to scale. It doesn't need to be production-ready. It just needs to be alive enough to be useful to you.
+Hannah Robertson has a lovely framing for this kind of work: [houseplant programming](https://hannahilea.com/blog/houseplant-programming/). Tiny software, just for yourself. It doesn't need to scale. It doesn't need to be production-ready. It just needs to be alive enough to be useful to you.
 
 At work we've been running with a related idea — [the garden server](https://miren.dev/blog/garden-server). A little cluster where internal apps grow. Sixteen applications now, from meeting bots to design docs to emoji search. The key insight there was that having a place for things to live made it way easier to build them. The plant survives when there's a place for it.
 
