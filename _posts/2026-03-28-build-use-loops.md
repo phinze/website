@@ -5,7 +5,7 @@ date:  2026-03-28
 listed: false
 ---
 
-*This is a draft — feedback welcome! Last updated 2026-03-29. [Edit history on GitHub.](https://github.com/phinze/phinze.github.io/commits/main/_posts/2026-03-28-build-use-loops.md)*
+*This is a draft — feedback welcome! Last updated 2026-03-29. [Edit history on GitHub.](https://github.com/phinze/website/commits/main/_posts/2026-03-28-build-use-loops.md)*
 
 Every nerd wants a Jarvis. A personal AI that knows your stuff, handles your tasks, extends what you can do. The dream has been kicking around since long before the tech was anywhere close.
 

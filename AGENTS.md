@@ -4,7 +4,7 @@ This file provides guidance to AI coding assistants when working with code in th
 
 ## Project Overview
 
-This is a personal website built with Jekyll 4.2.2 and hosted on GitHub Pages. The site features blog posts, talks, and projects with a custom brutalist theme.
+This is a personal website built with Jekyll 4.2.2 and self-hosted on Miren (running on the `selkie` server). The site features blog posts, talks, and projects with a custom brutalist theme.
 
 ## Development Workflow
 
@@ -120,4 +120,4 @@ See the `write-post` skill for the full collaborative writing process.
 
 ## Deployment
 
-This is a GitHub Pages site. Pushing to the `main` branch triggers automatic deployment. The live site is at https://phinze.com (configured via CNAME).
+The site is self-hosted on [Miren](https://miren.dev) running on the `selkie` server, and served at https://inze.ph. Deployment builds `Dockerfile.miren` (a multi-stage build that runs `jekyll build` and serves the static output with nginx). The nginx config (`nginx.conf`) serves inze.ph and 301-redirects the old phinze.com domain. Miren app config lives in `.miren/app.toml`.

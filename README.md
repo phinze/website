@@ -1,12 +1,12 @@
-# phinze.com
+# inze.ph
 
-My personal website, built with Jekyll and deployed on GitHub Pages.
+My personal website, built with Jekyll and self-hosted on [Miren](https://miren.dev).
 
-Visit at: [phinze.com](https://phinze.com)
+Visit at: [inze.ph](https://inze.ph)
 
 ## Local Development
 
-Run the site locally with Docker:
+Run the site locally:
 
 ```bash
 make serve

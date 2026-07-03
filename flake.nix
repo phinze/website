@@ -1,5 +1,5 @@
 {
-  description = "Jekyll development environment for phinze.com";
+  description = "Jekyll development environment for inze.ph";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
