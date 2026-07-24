@@ -305,6 +305,10 @@ article li {
   margin-bottom: 0.5rem;
 }
 
+article.post p {
+  text-align: justify;
+}
+
 .post-meta {
   font-family: var(--font-sans);
   font-size: 0.875rem;

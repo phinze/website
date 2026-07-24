@@ -51,5 +51,15 @@
   <!-- Styles -->
   <link rel="stylesheet" href="{{ "/assets/css/brutalist.css" | relative_url }}">
   <link rel="stylesheet" href="{{ "/assets/css/site.css" | relative_url }}">
+  {% if page.layout == "post" %}
+  <script
+    type="module"
+    blocking="render"
+    src="https://cdn.jsdelivr.net/npm/justif@0.6.0/dist/auto.js"
+    integrity="sha384-FYZaNdQTwa+ctcpso034D6xchrD78sHSfOTOx2Bg4G1zADRmRi8G/8EKBq5N0SvV"
+    crossorigin="anonymous"
+    data-justif-selector=".post p"
+  ></script>
+  {% endif %}
   <script defer src="https://stats.phinze.run.garden/script.js" data-website-id="3f80b6d5-6f55-4e77-812f-8474b7e1dbea" data-domains="inze.ph,phinze.com"></script>
 </head>
